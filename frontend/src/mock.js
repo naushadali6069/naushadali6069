@@ -74,7 +74,7 @@ export const portfolioProjects = [
     year: "2023-24",
     category: "Wildlife Conservation",
     description: "Multiple projects including famous selfie points, Nature Interpretation Centers, and eco-tourism infrastructure.",
-    image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkQ1QTJEIi8+PHRleHQgeD0iNTAlIiB5PSI0MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UGlsaWJoaXQgVGlnZXIgUmVzZXJ2ZTwvdGV4dD48dGV4dCB4PSI1MCUiIHk9IjYwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SdXN0aWMgV29vZGVuIEdhdGVzICYgTmF0dXJlIEludGVycHJldGF0aW9uIENlbnRlcjwvdGV4dD48L3N2Zz4=",
+    image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/rtxqtt0u_IMG_7030.png",
     actualImages: [
       "Rustic wooden archway with 'PILIBHIT TIGER RESERVE' carved sign, natural organic design with branches and foliage",
       "Wooden archway with thatched roof and tiger/deer sculptures at base for Saptasarovar area",
