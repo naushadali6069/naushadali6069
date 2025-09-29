@@ -103,7 +103,7 @@ export const portfolioProjects = [
     year: "2016-18",
     category: "Urban Wildlife",
     description: "Uttar Pradesh's first Butterfly Park with artistic installations and comprehensive interpretation center.",
-    image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNkI4RTIzIi8+PHRleHQgeD0iNTAlIiB5PSI0MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+THVja25vdyBab28gQnV0dGVyZmx5IFBhcms8L3RleHQ+PHRleHQgeD0iNTAlIiB5PSI2MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+R29sZGVuIExpb24gU2N1bHB0dXJlICYgQnV0dGVyZmx5LVRoZW1lZCBHYXRlPC90ZXh0Pjwvc3ZnPg==",
+    image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/kons7idf_IMG_0607.png",
     actualImages: [
       "Majestic golden lion sculpture mounted on ornate gate entrance with flags and decorations",
       "Charming wooden archway with butterfly motifs and artistic butterfly illustrations",
