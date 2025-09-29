@@ -164,7 +164,7 @@ export const portfolioProjects = [
     year: "2023-24",
     category: "Riverside Eco-Tourism",
     description: "Sustainable retreat center along scenic riverbank with eco-friendly huts and nature-centric design.",
-    image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNEE3QzU5Ii8+PHRleHQgeD0iNTAlIiB5PSI0MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UmFwZGkgRWNvLVRvdXJpc20gQ2VudHJlPC90ZXh0Pjx0ZXh0IHg9IjUwJSIgeT0iNjAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiNGRkZGRkYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkVjby1GcmllbmRseSBIdXRzIGFsb25nIFJpdmVyYmFuazwvdGV4dD48L3N2Zz4=",
+    image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/mj2hfyhr_0A8A1936.png",
     actualImages: [
       "Aerial view of multiple eco-friendly huts with thatched roofs along riverbank",
       "Individual sustainable huts made from natural materials with wooden accents",
