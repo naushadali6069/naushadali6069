@@ -1,34 +1,235 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Forest Vision Alliance - Custom Styles */
+
+/* Foundation Colors - Network Exact Colors with Nature Theme */
+:root {
+  /* Backgrounds - Natural Theme */
+  --bg-page: #FAFFEE;           /* Light natural background */
+  --bg-card: #FAFAFF;           /* Card backgrounds */ 
+  --bg-subtle: #EDEDFE;         /* Light section backgrounds */
+  --bg-section: #E8F5E8;        /* Subtle green sections */
+  
+  /* Forest Vision Brand Colors */
+  --brand-primary: #2D5A2D;     /* Deep forest green */
+  --brand-secondary: #4A7C59;   /* Medium forest green */
+  --brand-accent: #6B8E23;      /* Olive green accent */
+  --brand-light: #8FBC8F;       /* Light sage green */
+  --brand-hover: #1F4A1F;       /* Darker green on hover */
+  
+  /* Text Colors */
+  --text-primary: #1B4332;      /* Dark forest green for headings */
+  --text-secondary: #2D5A2D;    /* Medium green for text */
+  --text-light: #666B5C;        /* Muted green-grey for captions */
+  --text-white: #FFFFFF;        /* Pure white for contrast */
+  
+  /* Borders */
+  --border-light: #D4E4D4;      /* Light green borders */
+  --border-medium: #B8CCB8;     /* Medium green borders */
+  --border-strong: #9BB59B;     /* Strong green borders */
+  
+  /* Spacing System - Network Values */
+  --spacing-xs: 8px;
+  --spacing-small: 16px;
+  --spacing-medium: 24px;
+  --spacing-large: 32px;
+  --spacing-xl: 48px;
+  --spacing-giant: 64px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Global Styles */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-page);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Typography Scale - Network Sizing */
+.display-large { 
+  font-size: clamp(3rem, 6.5vw, 5rem); 
+  font-weight: 700; 
+  line-height: 0.95; 
+  color: var(--text-primary);
 }
 
-.App-link {
-    color: #61dafb;
+.display-medium { 
+  font-size: clamp(2rem, 4vw, 3rem); 
+  font-weight: 600; 
+  line-height: 1.2; 
+  color: var(--text-primary);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.heading-1 { 
+  font-size: clamp(2rem, 4vw, 3rem); 
+  font-weight: 600; 
+  line-height: 1.2; 
+  color: var(--text-primary);
+}
+
+.heading-2 { 
+  font-size: clamp(1.5rem, 3vw, 2rem); 
+  font-weight: 600; 
+  line-height: 1.3; 
+  color: var(--text-primary);
+}
+
+.heading-3 { 
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem); 
+  font-weight: 600; 
+  line-height: 1.4; 
+  color: var(--text-primary);
+}
+
+.body-large { 
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem); 
+  font-weight: 400; 
+  line-height: 1.6; 
+  color: var(--text-secondary);
+}
+
+.body-medium { 
+  font-size: clamp(1rem, 2vw, 1.125rem); 
+  font-weight: 400; 
+  line-height: 1.6; 
+  color: var(--text-secondary);
+}
+
+/* Primary Button - Pill Shape */
+.btn-primary {
+  background: var(--brand-primary);
+  color: var(--text-white);
+  border: none;
+  border-radius: 25px;
+  padding: 14px 32px;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  min-height: 48px;
+  line-height: 1.2;
+}
+
+.btn-primary:hover {
+  background: var(--brand-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(29, 74, 51, 0.25);
+}
+
+/* Secondary Button - Outlined Pill */
+.btn-secondary {
+  background: transparent;
+  color: var(--brand-primary);
+  border: 2px solid var(--brand-primary);
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  min-height: 48px;
+}
+
+.btn-secondary:hover {
+  background: var(--brand-primary);
+  color: var(--text-white);
+  transform: translateY(-2px);
+}
+
+/* Card Styles - Network Business Card Style */
+.forest-card {
+  background: var(--bg-card);
+  border-radius: 32px;
+  padding: var(--spacing-large);
+  box-shadow: 0 2px 8px rgba(27, 67, 50, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.forest-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(27, 67, 50, 0.25);
+}
+
+/* Container System */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+/* Grid System */
+.forest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-large);
+  padding: var(--spacing-large);
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Responsive Design */
+@media (max-width: 781px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  .forest-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-medium);
+    padding: var(--spacing-medium);
+  }
+  
+  .forest-card {
+    border-radius: 24px;
+    padding: var(--spacing-medium);
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+/* Hero Section Specific */
+.hero-section {
+  background: linear-gradient(135deg, var(--bg-page) 0%, var(--bg-section) 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-giant) 0;
+}
+
+/* Section Spacing */
+.section-padding {
+  padding: var(--spacing-giant) 0;
+}
+
+.section-padding-sm {
+  padding: var(--spacing-xl) 0;
 }
