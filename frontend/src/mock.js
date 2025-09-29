@@ -136,7 +136,7 @@ export const portfolioProjects = [
     year: "2024-25", 
     category: "Mountain Eco-Tourism",
     description: "Serene mountain selfie point integrating Himalayan wildlife sculptures with natural beauty.",
-    image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjOEZCQzhGIi8+PHRleHQgeD0iNTAlIiB5PSI0MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzFCNDMzMiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q2hvcHRhIFNlbGZpZSBQb2ludDwvdGV4dD48dGV4dCB4PSI1MCUiIHk9IjYwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMUI0MzMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5IZWFydC1TaGFwZWQgQmVuY2ggd2l0aCBMZW9wYXJkICYgTXVzayBEZWVyIFNjdWxwdHVyZXM8L3RleHQ+PC9zdmc+",
+    image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/476ipny0_PHOTO-2024-07-14-14-23-26.jpg",
     actualImages: [
       "Heart-shaped bench sculpture with leopard perched on arch above",
       "Musk deer sculpture at base with birds on branch elements",
