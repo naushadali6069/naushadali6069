@@ -193,7 +193,7 @@ export const portfolioProjects = [
     year: "2023-24",
     category: "Tiger Conservation", 
     description: "Grand stone entrance gate with architectural design reflecting traditional craftsmanship and tiger sculptures.",
-    image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMkQ1QTJEIi8+PHRleHQgeD0iNTAlIiB5PSI0MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UmFuaXB1ciBUaWdlciBSZXNlcnZlIEdhdGU8L3RleHQ+PHRleHQgeD0iNTAlIiB5PSI2MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U3RvbmUtQnVpbHQgR2F0ZXdheSB3aXRoIFRpZ2VyIFNjdWxwdHVyZXM8L3RleHQ+PC9zdmc+",
+    image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/j37sig7w_Ranipur%20Gate.png",
     actualImages: [
       "Large stone-built gateway with traditional architectural style and substantial tiger sculptures",
       "Tiger sculptures positioned at corners of base and on top of pillars",
