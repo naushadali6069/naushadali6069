@@ -112,8 +112,8 @@ export const portfolioProjects = [
       "Large colorful butterfly sculpture in garden setting"
     ],
     galleryImages: [
-      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/kons7idf_IMG_0607.png",
-      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/z76cjo0y_IMG_0670.png"
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/9mnbtpes_IMG_0670.png",
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/kons7idf_IMG_0607.png"
     ],
     highlights: [
       "Majestic golden lion sculpture as focal point of entrance",
