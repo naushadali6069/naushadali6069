@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MapPin, Calendar, CheckCircle, Eye, ExternalLink } from 'lucide-react';
+import { MapPin, Calendar, CheckCircle, Eye, ExternalLink, Camera, FileText } from 'lucide-react';
 import { portfolioProjects } from '../mock';
 
 const Portfolio = () => {
@@ -36,7 +36,7 @@ const Portfolio = () => {
           <div className="modal-image">
             <img 
               src={project.image} 
-              alt={project.title}
+              alt={`${project.title} - Placeholder for authentic project photos`}
               style={{
                 width: '100%',
                 height: '300px',
@@ -44,6 +44,10 @@ const Portfolio = () => {
                 borderRadius: '16px'
               }}
             />
+            <div className="image-note">
+              <Camera size={16} />
+              <span>Placeholder - Authentic project photos available from PDF portfolio</span>
+            </div>
           </div>
           
           <div className="modal-body">
@@ -61,6 +65,25 @@ const Portfolio = () => {
             <p className="body-medium" style={{ marginBottom: 'var(--spacing-medium)' }}>
               {project.detailedDescription || project.description}
             </p>
+            
+            {project.actualImages && (
+              <div className="actual-images-section">
+                <h4 className="heading-3" style={{ marginBottom: 'var(--spacing-small)' }}>
+                  <FileText size={20} style={{ marginRight: '8px', display: 'inline' }} />
+                  Authentic Project Features from PDF
+                </h4>
+                <div className="actual-images-list">
+                  {project.actualImages.map((imageDesc, idx) => (
+                    <div key={idx} className="image-description">
+                      <Camera size={14} color="var(--brand-primary)" />
+                      <span className="body-small" style={{ color: 'var(--text-secondary)' }}>
+                        {imageDesc}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             
             <div className="highlights-section">
               <h4 className="heading-3" style={{ marginBottom: 'var(--spacing-small)' }}>
@@ -97,10 +120,27 @@ const Portfolio = () => {
           <h2 className="heading-1" style={{ marginBottom: 'var(--spacing-medium)', textAlign: 'center' }}>
             Our <span style={{ color: 'var(--brand-accent)' }}>Portfolio</span>
           </h2>
-          <p className="body-large" style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto var(--spacing-giant)' }}>
+          <p className="body-large" style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto var(--spacing-medium)' }}>
             Discover our flagship projects across India, where we've transformed natural spaces into inspiring 
             destinations that educate, engage, and promote conservation.
           </p>
+          
+          <div className="pdf-note" style={{ 
+            textAlign: 'center', 
+            background: 'var(--bg-card)', 
+            padding: 'var(--spacing-medium)', 
+            borderRadius: '16px',
+            marginBottom: 'var(--spacing-giant)',
+            border: '2px dashed var(--brand-primary)'
+          }}>
+            <FileText size={24} color="var(--brand-primary)" style={{ marginBottom: 'var(--spacing-small)' }} />
+            <p className="body-medium" style={{ color: 'var(--brand-primary)', fontWeight: '600' }}>
+              📸 Authentic Project Photos Available
+            </p>
+            <p className="body-small" style={{ color: 'var(--text-light)' }}>
+              Current images are placeholders. Click "View Details" to see descriptions of actual project photos from your PDF portfolio, including gates, sculptures, interpretation centers, and eco-tourism facilities.
+            </p>
+          </div>
         </div>
         
         <div className="portfolio-grid">
@@ -113,7 +153,7 @@ const Portfolio = () => {
               <div className="project-image">
                 <img 
                   src={project.image} 
-                  alt={project.title}
+                  alt={`${project.title} - Placeholder for authentic project photos`}
                   loading="lazy"
                 />
                 <div className="image-overlay">
@@ -122,8 +162,12 @@ const Portfolio = () => {
                     onClick={() => setSelectedProject(project)}
                   >
                     <Eye size={20} />
-                    View Details
+                    View Authentic Details
                   </button>
+                </div>
+                <div className="placeholder-badge">
+                  <Camera size={12} />
+                  <span>From PDF</span>
                 </div>
               </div>
               
@@ -173,7 +217,7 @@ const Portfolio = () => {
                 
                 <div className="project-highlights">
                   <h4 className="body-medium" style={{ fontWeight: '600', marginBottom: 'var(--spacing-xs)' }}>
-                    Key Highlights:
+                    Key Features:
                   </h4>
                   <ul className="highlights-preview">
                     {project.highlights.slice(0, 2).map((highlight, idx) => (
@@ -188,7 +232,7 @@ const Portfolio = () => {
                   className="view-more-btn"
                   onClick={() => setSelectedProject(project)}
                 >
-                  View Full Details
+                  View Authentic Details
                   <ExternalLink size={16} style={{ marginLeft: '8px' }} />
                 </button>
               </div>
@@ -258,7 +302,7 @@ const Portfolio = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: rgba(27, 67, 50, 0.8);
+          background: rgba(27, 67, 50, 0.9);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -288,6 +332,21 @@ const Portfolio = () => {
           background: var(--brand-primary);
           color: white;
           transform: scale(1.05);
+        }
+        
+        .placeholder-badge {
+          position: absolute;
+          top: var(--spacing-small);
+          right: var(--spacing-small);
+          background: rgba(255, 255, 255, 0.9);
+          color: var(--brand-primary);
+          padding: 4px 8px;
+          border-radius: 12px;
+          font-size: 12px;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          gap: 4px;
         }
         
         .project-content {
@@ -390,7 +449,7 @@ const Portfolio = () => {
         .modal-content {
           background: white;
           border-radius: 24px;
-          max-width: 700px;
+          max-width: 800px;
           max-height: 90vh;
           overflow-y: auto;
           position: relative;
@@ -421,10 +480,46 @@ const Portfolio = () => {
         .modal-image {
           padding: 0 var(--spacing-large);
           margin-bottom: var(--spacing-medium);
+          position: relative;
+        }
+        
+        .image-note {
+          position: absolute;
+          bottom: 8px;
+          right: 8px;
+          background: rgba(255, 255, 255, 0.95);
+          color: var(--text-light);
+          padding: 6px 12px;
+          border-radius: 12px;
+          font-size: 12px;
+          display: flex;
+          align-items: center;
+          gap: 4px;
         }
         
         .modal-body {
           padding: 0 var(--spacing-large) var(--spacing-large);
+        }
+        
+        .actual-images-section {
+          background: var(--bg-section);
+          padding: var(--spacing-medium);
+          border-radius: 16px;
+          margin-bottom: var(--spacing-large);
+        }
+        
+        .actual-images-list {
+          display: grid;
+          gap: var(--spacing-small);
+        }
+        
+        .image-description {
+          display: flex;
+          align-items: flex-start;
+          gap: var(--spacing-small);
+          padding: var(--spacing-small);
+          background: white;
+          border-radius: 8px;
         }
         
         .highlights-section {
