@@ -47,7 +47,7 @@ export const portfolioProjects = [
     year: "2023-24",
     category: "Urban Forest Development",
     description: "A harmonious blend of Jhansi's heritage and wildlife, featuring iconic gates dedicated to Major Dhyan Chand with architectural grandeur.",
-    image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNEE3QzU5Ii8+PHRleHQgeD0iNTAlIiB5PSI0MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TWFqb3IgRGh5YW4gQ2hhbmQgTmFnYXIgVmFuPC90ZXh0Pjx0ZXh0IHg9IjUwJSIgeT0iNjAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiNGRkZGRkYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk1vbnVtZW50YWwgR2F0ZSB3aXRoIEVsZXBoYW50LCBUaWdlciAmIExlb3BhcmQgU2N1bHB0dXJlczwvdGV4dD48L3N2Zz4=",
+    image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/rm903abq_IMG_5564.jpg",
     actualImages: [
       "Monumental archway resembling rocky cliff face with life-size elephant sculptures at base, leopards on ledges, central tiger sculpture above arch, and peacocks on sides",
       "Lifelike tiger and deer sculptures on rocky outcrops with naturalistic poses",
