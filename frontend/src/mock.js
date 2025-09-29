@@ -111,6 +111,10 @@ export const portfolioProjects = [
       "Interior LED displays showcasing wildlife facts and identification charts",
       "Large colorful butterfly sculpture in garden setting"
     ],
+    galleryImages: [
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/kons7idf_IMG_0607.png",
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/z76cjo0y_IMG_0670.png"
+    ],
     highlights: [
       "Majestic golden lion sculpture as focal point of entrance",
       "Butterfly-themed wooden gate with artistic illustrations", 
