@@ -103,7 +103,7 @@ export const portfolioProjects = [
     year: "2016-18",
     category: "Urban Wildlife",
     description: "Uttar Pradesh's first Butterfly Park with artistic installations and comprehensive interpretation center.",
-    image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/kons7idf_IMG_0607.png",
+    image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/9mnbtpes_IMG_0670.png",
     actualImages: [
       "Majestic golden lion sculpture mounted on ornate gate entrance with flags and decorations",
       "Charming wooden archway with butterfly motifs and artistic butterfly illustrations",
