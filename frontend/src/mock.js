@@ -173,6 +173,13 @@ export const portfolioProjects = [
     category: "Riverside Eco-Tourism",
     description: "Sustainable retreat center along scenic riverbank with eco-friendly huts and nature-centric design.",
     image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/mj2hfyhr_0A8A1936.png",
+    galleryImages: [
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/mmgu3drr_0A8A1883.JPEG",
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/kg2e1hb6_0A8A1897.JPG",
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/f9jdcrla_0A8A1949.JPEG",
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/275r0fr1_0A8A1940.JPG",
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/uav55gh4_DJI_0233.JPG"
+    ],
     actualImages: [
       "Aerial view of multiple eco-friendly huts with thatched roofs along riverbank",
       "Individual sustainable huts made from natural materials with wooden accents",
