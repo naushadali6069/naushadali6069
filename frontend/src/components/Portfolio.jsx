@@ -292,13 +292,14 @@ const Portfolio = () => {
           border-radius: 32px;
           overflow: hidden;
           box-shadow: 0 4px 20px rgba(27, 67, 50, 0.1);
-          transition: all 0.3s ease;
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           cursor: pointer;
+          position: relative;
         }
         
         .portfolio-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 12px 40px rgba(27, 67, 50, 0.2);
+          transform: translateY(-12px) rotateX(5deg);
+          box-shadow: 0 20px 60px rgba(27, 67, 50, 0.25);
         }
         
         .project-image {
@@ -311,11 +312,12 @@ const Portfolio = () => {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: transform 0.3s ease;
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .portfolio-card:hover .project-image img {
-          transform: scale(1.05);
+          transform: scale(1.15) rotate(2deg);
+          filter: brightness(1.1) contrast(1.05);
         }
         
         .image-overlay {
@@ -324,12 +326,13 @@ const Portfolio = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: rgba(27, 67, 50, 0.9);
+          background: linear-gradient(135deg, rgba(27, 67, 50, 0.85) 0%, rgba(45, 90, 45, 0.9) 100%);
           display: flex;
           align-items: center;
           justify-content: center;
           opacity: 0;
-          transition: opacity 0.3s ease;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          backdrop-filter: blur(2px);
         }
         
         .portfolio-card:hover .image-overlay {
@@ -337,42 +340,74 @@ const Portfolio = () => {
         }
         
         .view-project-btn {
-          background: white;
+          background: rgba(255, 255, 255, 0.95);
           color: var(--brand-primary);
           border: none;
-          padding: 12px 24px;
-          border-radius: 25px;
-          font-weight: 600;
+          padding: 16px 28px;
+          border-radius: 30px;
+          font-weight: 700;
           display: flex;
           align-items: center;
-          gap: 8px;
+          gap: 10px;
           cursor: pointer;
-          transition: all 0.2s ease;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          backdrop-filter: blur(10px);
+          box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+          transform: translateY(20px);
+        }
+        
+        .portfolio-card:hover .view-project-btn {
+          transform: translateY(0) scale(1.05);
         }
         
         .view-project-btn:hover {
           background: var(--brand-primary);
           color: white;
-          transform: scale(1.05);
+          transform: translateY(0) scale(1.1) rotate(-2deg);
+          box-shadow: 0 12px 35px rgba(45, 90, 45, 0.4);
         }
         
         .placeholder-badge {
           position: absolute;
           top: var(--spacing-small);
           right: var(--spacing-small);
-          background: rgba(255, 255, 255, 0.9);
+          background: rgba(255, 255, 255, 0.95);
           color: var(--brand-primary);
-          padding: 4px 8px;
-          border-radius: 12px;
+          padding: 6px 12px;
+          border-radius: 20px;
           font-size: 12px;
-          font-weight: 600;
+          font-weight: 700;
           display: flex;
           align-items: center;
-          gap: 4px;
+          gap: 6px;
+          backdrop-filter: blur(10px);
+          box-shadow: 0 4px 15px rgba(45, 90, 45, 0.2);
+          animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
         }
         
         .project-content {
           padding: var(--spacing-large);
+          position: relative;
+        }
+        
+        .project-content:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 3px;
+          background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
+          transition: width 0.5s ease;
+        }
+        
+        .portfolio-card:hover .project-content:before {
+          width: 100%;
         }
         
         .project-header {
@@ -386,6 +421,7 @@ const Portfolio = () => {
           display: flex;
           align-items: center;
           gap: var(--spacing-xs);
+          animation: fadeInUp 0.6s ease-out;
         }
         
         .project-meta {
@@ -398,6 +434,11 @@ const Portfolio = () => {
           display: flex;
           align-items: center;
           gap: var(--spacing-xs);
+          transition: transform 0.3s ease;
+        }
+        
+        .meta-item:hover {
+          transform: scale(1.1);
         }
         
         .highlights-preview {
@@ -407,39 +448,70 @@ const Portfolio = () => {
         }
         
         .highlights-preview li {
-          padding: 2px 0;
+          padding: 4px 0;
           position: relative;
           padding-left: var(--spacing-small);
+          transition: all 0.3s ease;
+          opacity: 0.8;
+        }
+        
+        .highlights-preview li:hover {
+          opacity: 1;
+          transform: translateX(5px);
         }
         
         .highlights-preview li:before {
-          content: '•';
-          color: var(--brand-primary);
+          content: '✦';
+          color: var(--brand-accent);
           font-weight: bold;
           position: absolute;
           left: 0;
+          animation: sparkle 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
         }
         
         .view-more-btn {
-          background: transparent;
+          background: linear-gradient(135deg, transparent, var(--brand-primary));
           border: 2px solid var(--brand-primary);
           border-radius: 25px;
-          padding: 10px 20px;
+          padding: 12px 24px;
           color: var(--brand-primary);
           font-weight: 600;
           cursor: pointer;
-          transition: all 0.2s ease;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           margin-top: var(--spacing-medium);
           display: flex;
           align-items: center;
           justify-content: center;
           width: 100%;
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .view-more-btn:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+          transition: left 0.5s;
         }
         
         .view-more-btn:hover {
           background: var(--brand-primary);
           color: white;
-          transform: translateY(-2px);
+          transform: translateY(-3px) scale(1.02);
+          box-shadow: 0 8px 25px rgba(45, 90, 45, 0.3);
+        }
+        
+        .view-more-btn:hover:before {
+          left: 100%;
         }
         
         .portfolio-cta {
