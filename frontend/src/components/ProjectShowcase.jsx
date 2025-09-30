@@ -134,32 +134,36 @@ const ProjectShowcase = () => {
                         alt={slide.title}
                         loading={index === 0 ? "eager" : "lazy"}
                       />
-                      <div className="slide-overlay">
-                        <div className="slide-content">
-                          <div className="slide-category">
-                            <span>{slide.category}</span>
-                          </div>
-                          <h3 className="slide-title heading-2">{slide.title}</h3>
-                          <div className="slide-meta">
-                            <div className="meta-item">
-                              <MapPin size={16} />
-                              <span>{slide.location}</span>
-                            </div>
-                            <div className="meta-item">
-                              <Calendar size={16} />
-                              <span>{slide.year}</span>
-                            </div>
-                          </div>
-                          <p className="slide-description body-medium">{slide.description}</p>
-                          
-                          {/* Video Placeholder Button */}
-                          {slide.videoPlaceholder && (
-                            <button className="video-placeholder-btn">
-                              <Play size={20} />
-                              <span>Project Video Coming Soon</span>
-                            </button>
-                          )}
+                      <div className="slide-overlay"></div>
+                    </div>
+                    
+                    {/* Footer-style content below image */}
+                    <div className="slide-content">
+                      <div className="slide-info">
+                        <div className="slide-category">
+                          <span>{slide.category}</span>
                         </div>
+                        <h3 className="slide-title">{slide.title}</h3>
+                        <div className="slide-meta">
+                          <div className="meta-item">
+                            <MapPin size={14} />
+                            <span>{slide.location}</span>
+                          </div>
+                          <div className="meta-item">
+                            <Calendar size={14} />
+                            <span>{slide.year}</span>
+                          </div>
+                        </div>
+                        <p className="slide-description">{slide.description}</p>
+                      </div>
+                      
+                      <div className="slide-actions">
+                        {slide.videoPlaceholder && (
+                          <button className="video-placeholder-btn">
+                            <Play size={18} />
+                            <span>Watch Project Video</span>
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>
