@@ -838,25 +838,44 @@ const Portfolio = () => {
         
         .thumbnail {
           flex-shrink: 0;
-          width: 80px;
-          height: 60px;
-          border-radius: 8px;
+          width: 90px;
+          height: 68px;
+          border-radius: 12px;
           overflow: hidden;
-          border: 2px solid transparent;
+          border: 3px solid transparent;
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           background: none;
           padding: 0;
+          position: relative;
+        }
+        
+        .thumbnail::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, rgba(45, 90, 45, 0.2) 0%, transparent 100%);
+          opacity: 0;
+          transition: opacity 0.3s ease;
         }
         
         .thumbnail.active {
           border-color: var(--brand-primary);
-          transform: scale(1.05);
+          transform: scale(1.08) translateY(-4px);
+          box-shadow: 0 8px 25px rgba(45, 90, 45, 0.3);
+        }
+        
+        .thumbnail.active::before {
+          opacity: 1;
         }
         
         .thumbnail:hover {
           border-color: var(--brand-accent);
-          transform: scale(1.02);
+          transform: scale(1.05) translateY(-2px);
+          box-shadow: 0 6px 20px rgba(70, 130, 60, 0.2);
         }
         
         .thumbnail img {
