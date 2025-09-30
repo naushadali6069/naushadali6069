@@ -11,6 +11,8 @@ const Contact = () => {
     project: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
 
   useEffect(() => {
     const observer = new IntersectionObserver(
