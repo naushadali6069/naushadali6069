@@ -243,13 +243,14 @@ const ProjectShowcase = () => {
 
         .slide-display {
           position: relative;
-          height: 600px;
+          height: 650px;
           overflow: hidden;
+          border-radius: 24px;
         }
 
         .slide-track {
           display: flex;
-          transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
           height: 100%;
         }
 
@@ -270,11 +271,12 @@ const ProjectShowcase = () => {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: transform 0.8s ease;
+          transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+          filter: brightness(1.05) contrast(1.1) saturate(1.1);
         }
 
         .slide:hover .slide-image img {
-          transform: scale(1.05);
+          transform: scale(1.08);
         }
 
         .slide-overlay {
@@ -285,82 +287,115 @@ const ProjectShowcase = () => {
           bottom: 0;
           background: linear-gradient(
             135deg,
-            rgba(0, 0, 0, 0.2) 0%,
-            rgba(27, 67, 50, 0.8) 70%,
-            rgba(45, 90, 45, 0.9) 100%
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.2) 40%,
+            rgba(27, 67, 50, 0.6) 100%
           );
           display: flex;
           align-items: flex-end;
-          padding: var(--spacing-giant);
+          padding: 0;
+          pointer-events: none;
         }
 
         .slide-content {
           color: white;
-          max-width: 600px;
+          max-width: 450px;
+          margin: var(--spacing-large);
+          background: rgba(0, 0, 0, 0.7);
+          padding: var(--spacing-large);
+          border-radius: 20px;
+          backdrop-filter: blur(15px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transform: translateY(20px);
+          animation: slideContentUp 0.8s ease-out forwards;
+          pointer-events: auto;
+        }
+
+        @keyframes slideContentUp {
+          to {
+            transform: translateY(0);
+          }
         }
 
         .slide-category {
-          margin-bottom: var(--spacing-small);
+          margin-bottom: var(--spacing-xs);
         }
 
         .slide-category span {
           background: var(--brand-accent);
           color: white;
-          padding: var(--spacing-xs) var(--spacing-small);
-          border-radius: 20px;
-          font-size: 14px;
-          font-weight: 600;
+          padding: 4px var(--spacing-small);
+          border-radius: 12px;
+          font-size: 11px;
+          font-weight: 700;
           text-transform: uppercase;
-          letter-spacing: 0.5px;
+          letter-spacing: 0.8px;
         }
 
         .slide-title {
           color: white;
-          margin-bottom: var(--spacing-medium);
-          font-size: 2.5rem;
+          margin-bottom: var(--spacing-small);
+          font-size: 1.8rem;
           font-weight: 700;
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+          line-height: 1.2;
         }
 
         .slide-meta {
           display: flex;
-          gap: var(--spacing-large);
-          margin-bottom: var(--spacing-medium);
+          gap: var(--spacing-medium);
+          margin-bottom: var(--spacing-small);
         }
 
         .meta-item {
           display: flex;
           align-items: center;
-          gap: var(--spacing-xs);
+          gap: 4px;
           color: rgba(255, 255, 255, 0.9);
-          font-size: 14px;
+          font-size: 12px;
+          font-weight: 500;
         }
 
         .slide-description {
-          color: rgba(255, 255, 255, 0.9);
-          margin-bottom: var(--spacing-large);
-          line-height: 1.6;
+          color: rgba(255, 255, 255, 0.95);
+          margin-bottom: var(--spacing-medium);
+          line-height: 1.5;
+          font-size: 14px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
 
         .video-placeholder-btn {
           display: flex;
           align-items: center;
-          gap: var(--spacing-small);
-          background: rgba(255, 255, 255, 0.2);
-          border: 2px solid rgba(255, 255, 255, 0.3);
+          gap: 8px;
+          background: rgba(255, 255, 255, 0.15);
+          border: 1px solid rgba(255, 255, 255, 0.3);
           color: white;
-          padding: var(--spacing-medium) var(--spacing-large);
-          border-radius: 30px;
+          padding: 10px var(--spacing-medium);
+          border-radius: 25px;
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
           font-weight: 600;
+          font-size: 13px;
           backdrop-filter: blur(10px);
+          transform: scale(0.95);
+          animation: buttonPop 0.6s ease-out 0.3s forwards;
+        }
+
+        @keyframes buttonPop {
+          to {
+            transform: scale(1);
+          }
         }
 
         .video-placeholder-btn:hover {
-          background: rgba(255, 255, 255, 0.3);
+          background: rgba(255, 255, 255, 0.25);
           border-color: rgba(255, 255, 255, 0.5);
-          transform: translateY(-2px);
+          transform: translateY(-2px) scale(1.02);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
 
         .slide-nav {
