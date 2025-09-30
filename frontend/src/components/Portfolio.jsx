@@ -720,6 +720,17 @@ const Portfolio = () => {
           }
         }
         
+        @keyframes imageSlideIn {
+          0% { 
+            opacity: 0;
+            transform: translateX(30px) scale(0.95);
+          }
+          100% { 
+            opacity: 1;
+            transform: translateX(0) scale(1);
+          }
+        }
+        
         .modal-header {
           display: flex;
           justify-content: space-between;
