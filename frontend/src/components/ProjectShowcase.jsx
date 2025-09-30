@@ -1,0 +1,513 @@
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, Play, MapPin, Calendar } from 'lucide-react';
+
+const ProjectShowcase = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoplay, setIsAutoplay] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Featured project slides with stunning images
+  const featuredSlides = [
+    {
+      id: 1,
+      title: "Major Dhyan Chand Nagar Van",
+      location: "Jhansi, Uttar Pradesh", 
+      year: "2023-24",
+      image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/rm903abq_IMG_5564.jpg",
+      description: "A harmonious blend of Jhansi's heritage and wildlife, featuring iconic gates with architectural grandeur.",
+      category: "Urban Forest Development",
+      videoPlaceholder: true
+    },
+    {
+      id: 2,
+      title: "Pilibhit Tiger Reserve Projects",
+      location: "Pilibhit, Uttar Pradesh",
+      year: "2023-24", 
+      image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/rtxqtt0u_IMG_7030.png",
+      description: "Multiple eco-tourism projects including famous selfie points and Nature Interpretation Centers.",
+      category: "Wildlife Conservation",
+      videoPlaceholder: true
+    },
+    {
+      id: 3,
+      title: "Lucknow Zoo Butterfly Park",
+      location: "Lucknow, Uttar Pradesh",
+      year: "2016-18",
+      image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/9mnbtpes_IMG_0670.png",
+      description: "Uttar Pradesh's first Butterfly Park with artistic installations and comprehensive interpretation center.",
+      category: "Urban Wildlife",
+      videoPlaceholder: true
+    },
+    {
+      id: 4,
+      title: "Rapdi Eco-Tourism Centre",
+      location: "Firozabad, Uttar Pradesh",
+      year: "2023-24",
+      image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/uav55gh4_DJI_0233.JPG",
+      description: "Sustainable retreat center along scenic riverbank with eco-friendly huts and nature-centric design.",
+      category: "Riverside Eco-Tourism",
+      videoPlaceholder: true
+    },
+    {
+      id: 5,
+      title: "Ranipur Tiger Reserve Gate",
+      location: "Chitrakoot, Uttar Pradesh",
+      year: "2023-24",
+      image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/j37sig7w_Ranipur%20Gate.png",
+      description: "Grand stone entrance gate with traditional craftsmanship and tiger sculptures.",
+      category: "Tiger Conservation",
+      videoPlaceholder: true
+    }
+  ];
+
+  // Auto-advance slides
+  useEffect(() => {
+    if (!isAutoplay) return;
+    
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % featuredSlides.length);
+    }, 5000); // Change slide every 5 seconds
+    
+    return () => clearInterval(interval);
+  }, [isAutoplay, featuredSlides.length]);
+
+  // Intersection observer for animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const section = document.getElementById('project-showcase');
+    if (section) observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % featuredSlides.length);
+    setIsAutoplay(false); // Pause autoplay when user manually navigates
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + featuredSlides.length) % featuredSlides.length);
+    setIsAutoplay(false);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+    setIsAutoplay(false);
+  };
+
+  return (
+    <section id="project-showcase" className="showcase-section">
+      <div className="showcase-container">
+        {/* Section Header */}
+        <div className={`showcase-header fade-in ${isVisible ? 'visible' : ''}`}>
+          <h2 className="heading-1" style={{ textAlign: 'center', marginBottom: 'var(--spacing-small)' }}>
+            Featured <span style={{ color: 'var(--brand-accent)' }}>Project Showcase</span>
+          </h2>
+          <p className="body-large" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto var(--spacing-large)' }}>
+            Explore our most impactful eco-tourism projects across India, transforming natural spaces into inspiring destinations
+          </p>
+        </div>
+
+        {/* Slideshow Container */}
+        <div className={`slideshow-container fade-in ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '200ms' }}>
+          <div className="slideshow-wrapper">
+            
+            {/* Main Slide Display */}
+            <div className="slide-display">
+              <div 
+                className="slide-track"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {featuredSlides.map((slide, index) => (
+                  <div key={slide.id} className="slide">
+                    <div className="slide-image">
+                      <img 
+                        src={slide.image} 
+                        alt={slide.title}
+                        loading={index === 0 ? "eager" : "lazy"}
+                      />
+                      <div className="slide-overlay">
+                        <div className="slide-content">
+                          <div className="slide-category">
+                            <span>{slide.category}</span>
+                          </div>
+                          <h3 className="slide-title heading-2">{slide.title}</h3>
+                          <div className="slide-meta">
+                            <div className="meta-item">
+                              <MapPin size={16} />
+                              <span>{slide.location}</span>
+                            </div>
+                            <div className="meta-item">
+                              <Calendar size={16} />
+                              <span>{slide.year}</span>
+                            </div>
+                          </div>
+                          <p className="slide-description body-medium">{slide.description}</p>
+                          
+                          {/* Video Placeholder Button */}
+                          {slide.videoPlaceholder && (
+                            <button className="video-placeholder-btn">
+                              <Play size={20} />
+                              <span>Project Video Coming Soon</span>
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Navigation Arrows */}
+              <button className="slide-nav slide-nav-prev" onClick={prevSlide}>
+                <ChevronLeft size={32} />
+              </button>
+              <button className="slide-nav slide-nav-next" onClick={nextSlide}>
+                <ChevronRight size={32} />
+              </button>
+            </div>
+
+            {/* Slide Indicators */}
+            <div className="slide-indicators">
+              {featuredSlides.map((_, index) => (
+                <button
+                  key={index}
+                  className={`indicator ${index === currentSlide ? 'active' : ''}`}
+                  onClick={() => goToSlide(index)}
+                >
+                  <span className="indicator-progress"></span>
+                </button>
+              ))}
+            </div>
+
+            {/* Autoplay Control */}
+            <div className="autoplay-control">
+              <button 
+                className={`autoplay-btn ${isAutoplay ? 'active' : ''}`}
+                onClick={() => setIsAutoplay(!isAutoplay)}
+              >
+                {isAutoplay ? 'Pause' : 'Play'} Slideshow
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .showcase-section {
+          padding: var(--spacing-giant) 0;
+          background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-subtle) 100%);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .showcase-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.02' fill-rule='evenodd'%3E%3Cpath d='m0 40l40-40h-40v40zm40 0v-40h-40l40 40z'/%3E%3C/g%3E%3C/svg%3E");
+          opacity: 0.3;
+        }
+
+        .showcase-container {
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 var(--spacing-medium);
+          position: relative;
+          z-index: 1;
+        }
+
+        .slideshow-container {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .slideshow-wrapper {
+          position: relative;
+          border-radius: 32px;
+          overflow: hidden;
+          box-shadow: 0 25px 80px rgba(27, 67, 50, 0.3);
+          background: white;
+        }
+
+        .slide-display {
+          position: relative;
+          height: 600px;
+          overflow: hidden;
+        }
+
+        .slide-track {
+          display: flex;
+          transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          height: 100%;
+        }
+
+        .slide {
+          min-width: 100%;
+          height: 100%;
+          position: relative;
+        }
+
+        .slide-image {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .slide-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.8s ease;
+        }
+
+        .slide:hover .slide-image img {
+          transform: scale(1.05);
+        }
+
+        .slide-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(27, 67, 50, 0.8) 70%,
+            rgba(45, 90, 45, 0.9) 100%
+          );
+          display: flex;
+          align-items: flex-end;
+          padding: var(--spacing-giant);
+        }
+
+        .slide-content {
+          color: white;
+          max-width: 600px;
+        }
+
+        .slide-category {
+          margin-bottom: var(--spacing-small);
+        }
+
+        .slide-category span {
+          background: var(--brand-accent);
+          color: white;
+          padding: var(--spacing-xs) var(--spacing-small);
+          border-radius: 20px;
+          font-size: 14px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .slide-title {
+          color: white;
+          margin-bottom: var(--spacing-medium);
+          font-size: 2.5rem;
+          font-weight: 700;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide-meta {
+          display: flex;
+          gap: var(--spacing-large);
+          margin-bottom: var(--spacing-medium);
+        }
+
+        .meta-item {
+          display: flex;
+          align-items: center;
+          gap: var(--spacing-xs);
+          color: rgba(255, 255, 255, 0.9);
+          font-size: 14px;
+        }
+
+        .slide-description {
+          color: rgba(255, 255, 255, 0.9);
+          margin-bottom: var(--spacing-large);
+          line-height: 1.6;
+        }
+
+        .video-placeholder-btn {
+          display: flex;
+          align-items: center;
+          gap: var(--spacing-small);
+          background: rgba(255, 255, 255, 0.2);
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          color: white;
+          padding: var(--spacing-medium) var(--spacing-large);
+          border-radius: 30px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-weight: 600;
+          backdrop-filter: blur(10px);
+        }
+
+        .video-placeholder-btn:hover {
+          background: rgba(255, 255, 255, 0.3);
+          border-color: rgba(255, 255, 255, 0.5);
+          transform: translateY(-2px);
+        }
+
+        .slide-nav {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(255, 255, 255, 0.9);
+          border: none;
+          width: 64px;
+          height: 64px;
+          border-radius: 50%;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--brand-primary);
+          transition: all 0.3s ease;
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+          z-index: 10;
+        }
+
+        .slide-nav:hover {
+          background: var(--brand-primary);
+          color: white;
+          transform: translateY(-50%) scale(1.1);
+          box-shadow: 0 12px 35px rgba(45, 90, 45, 0.3);
+        }
+
+        .slide-nav-prev {
+          left: var(--spacing-large);
+        }
+
+        .slide-nav-next {
+          right: var(--spacing-large);
+        }
+
+        .slide-indicators {
+          display: flex;
+          justify-content: center;
+          gap: var(--spacing-small);
+          padding: var(--spacing-large);
+          background: rgba(255, 255, 255, 0.95);
+        }
+
+        .indicator {
+          width: 60px;
+          height: 6px;
+          background: rgba(27, 67, 50, 0.2);
+          border: none;
+          border-radius: 3px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .indicator-progress {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          background: var(--brand-primary);
+          border-radius: 3px;
+          width: 0;
+          transition: width 0.3s ease;
+        }
+
+        .indicator.active {
+          background: var(--brand-primary);
+        }
+
+        .indicator.active .indicator-progress {
+          width: 100%;
+          animation: progress 5s linear;
+        }
+
+        @keyframes progress {
+          from { width: 0; }
+          to { width: 100%; }
+        }
+
+        .autoplay-control {
+          position: absolute;
+          bottom: var(--spacing-medium);
+          right: var(--spacing-medium);
+        }
+
+        .autoplay-btn {
+          background: rgba(0, 0, 0, 0.6);
+          color: white;
+          border: none;
+          padding: var(--spacing-small) var(--spacing-medium);
+          border-radius: 20px;
+          font-size: 12px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(10px);
+        }
+
+        .autoplay-btn:hover {
+          background: rgba(0, 0, 0, 0.8);
+        }
+
+        .autoplay-btn.active {
+          background: var(--brand-primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .slide-display {
+            height: 400px;
+          }
+
+          .slide-overlay {
+            padding: var(--spacing-large);
+          }
+
+          .slide-title {
+            font-size: 1.8rem;
+          }
+
+          .slide-meta {
+            flex-direction: column;
+            gap: var(--spacing-small);
+          }
+
+          .slide-nav {
+            width: 48px;
+            height: 48px;
+          }
+
+          .slide-nav-prev {
+            left: var(--spacing-small);
+          }
+
+          .slide-nav-next {
+            right: var(--spacing-small);
+          }
+
+          .indicator {
+            width: 40px;
+            height: 4px;
+          }
+        }
+      `}</style>
+    </section>
+  );
+};
+
+export default ProjectShowcase;
