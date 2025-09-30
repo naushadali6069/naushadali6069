@@ -80,7 +80,12 @@ export const portfolioProjects = [
       "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/9hy7iqcy_pixelcut-export-2.png",
       "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/73d7e8dn_updated.jpg",
       "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/x8f0mov8_IMG_5246.png",
-      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/2avme0r8_IMG_6129.png"
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/2avme0r8_IMG_6129.png",
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/4ud8dkg1_Screenshot%202024-12-14%20at%207.31.22%E2%80%AFPM.png",
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/y4ry7mqf_PHOTO-2022-11-15-13-43-05%202.jpg",
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/ctncfw31_PHOTO-2023-11-15-14-07-16.jpg",
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/15ezh070_PHOTO-2022-11-09-08-15-17.jpg",
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/qy48c6dt_IMG_8042.jpg"
     ],
     highlights: [
       "Most popular selfie point in Mustafabad Range",
