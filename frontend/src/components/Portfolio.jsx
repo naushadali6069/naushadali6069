@@ -672,13 +672,25 @@ const Portfolio = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: rgba(0, 0, 0, 0.9);
+          background: rgba(0, 0, 0, 0.95);
           display: flex;
           align-items: center;
           justify-content: center;
           z-index: 1000;
           padding: var(--spacing-medium);
-          backdrop-filter: blur(5px);
+          backdrop-filter: blur(8px);
+          animation: modalFadeIn 0.3s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+          0% { 
+            opacity: 0; 
+            backdrop-filter: blur(0px);
+          }
+          100% { 
+            opacity: 1; 
+            backdrop-filter: blur(8px);
+          }
         }
         
         .modal-content {
@@ -688,7 +700,19 @@ const Portfolio = () => {
           max-height: 95vh;
           overflow-y: auto;
           position: relative;
-          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+          animation: modalSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @keyframes modalSlideIn {
+          0% { 
+            transform: scale(0.8) translateY(50px);
+            opacity: 0;
+          }
+          100% { 
+            transform: scale(1) translateY(0);
+            opacity: 1;
+          }
         }
         
         .modal-header {
