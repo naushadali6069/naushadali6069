@@ -371,8 +371,9 @@ const Portfolio = () => {
         }
         
         .portfolio-card:hover {
-          transform: translateY(-12px) rotateX(5deg);
-          box-shadow: 0 20px 60px rgba(27, 67, 50, 0.25);
+          transform: translateY(-16px) rotateX(8deg) rotateY(-3deg);
+          box-shadow: 0 25px 80px rgba(27, 67, 50, 0.35);
+          background: linear-gradient(135deg, var(--bg-card) 0%, rgba(255, 255, 255, 0.98) 100%);
         }
         
         .project-image {
