@@ -544,8 +544,73 @@ const Portfolio = () => {
         }
         
         @keyframes sparkle {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.5; }
+          0%, 100% { opacity: 1; transform: scale(1); }
+          25% { opacity: 0.8; transform: scale(1.1); }
+          50% { opacity: 0.5; transform: scale(0.9); }
+          75% { opacity: 0.8; transform: scale(1.05); }
+        }
+        
+        @keyframes floatIn {
+          0% { 
+            opacity: 0; 
+            transform: translateY(30px) scale(0.9); 
+          }
+          100% { 
+            opacity: 1; 
+            transform: translateY(0) scale(1); 
+          }
+        }
+        
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        
+        .portfolio-card {
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .portfolio-card::before {
+          content: '';
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: linear-gradient(45deg, 
+            transparent 30%, 
+            rgba(255, 255, 255, 0.1) 50%, 
+            transparent 70%);
+          transform: translateX(-100%) translateY(-100%);
+          transition: transform 0.8s ease;
+          z-index: 1;
+          pointer-events: none;
+        }
+        
+        .portfolio-card:hover::before {
+          transform: translateX(0) translateY(0);
+        }
+        
+        .portfolio-card::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, 
+            rgba(45, 90, 45, 0.02) 0%, 
+            transparent 50%, 
+            rgba(70, 130, 60, 0.02) 100%);
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          z-index: 0;
+          pointer-events: none;
+        }
+        
+        .portfolio-card:hover::after {
+          opacity: 1;
         }
         
         .view-more-btn {
