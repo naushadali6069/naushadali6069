@@ -48,10 +48,10 @@ export const portfolioProjects = [
     category: "Urban Forest Development",
     description: "A harmonious blend of Jhansi's heritage and wildlife, featuring iconic gates dedicated to Major Dhyan Chand with architectural grandeur.",
     image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/rm903abq_IMG_5564.jpg",
-    actualImages: [
-      "Monumental archway resembling rocky cliff face with life-size elephant sculptures at base, leopards on ledges, central tiger sculpture above arch, and peacocks on sides",
-      "Lifelike tiger and deer sculptures on rocky outcrops with naturalistic poses",
-      "Lion mural sitting by water with lush green background"
+    galleryImages: [
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/ho5gwmqb_image.jpeg",
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/bhicb6r7_image.jpeg", 
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/f91umea4_2e40225c-d819-4bbb-b52f-1af39d73d5c6.JPG"
     ],
     highlights: [
       "Grand entrance gate with elephant and leopard sculptures",
