@@ -24,6 +24,8 @@ const Portfolio = () => {
   }, []);
 
   const ProjectModal = ({ project, onClose }) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    
     if (!project) return null;
     
     // Create gallery array with main image + additional gallery images
@@ -41,14 +43,17 @@ const Portfolio = () => {
     ];
 
     const nextImage = () => {
+      console.log('Next image clicked, current:', currentImageIndex); // Debug log
       setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
     };
 
     const prevImage = () => {
+      console.log('Previous image clicked, current:', currentImageIndex); // Debug log
       setCurrentImageIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
     };
 
     const goToImage = (index) => {
+      console.log('Go to image:', index); // Debug log
       setCurrentImageIndex(index);
     };
 
