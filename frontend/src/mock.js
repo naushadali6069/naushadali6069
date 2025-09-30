@@ -209,6 +209,10 @@ export const portfolioProjects = [
     category: "Tiger Conservation", 
     description: "Grand stone entrance gate with architectural design reflecting traditional craftsmanship and tiger sculptures.",
     image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/j37sig7w_Ranipur%20Gate.png",
+    galleryImages: [
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/8yaz6b7r_pixelcut-export%20copy%202.jpeg",
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/tmzreds6_pixelcut-export%20copy.jpeg"
+    ],
     actualImages: [
       "Large stone-built gateway with traditional architectural style and substantial tiger sculptures",
       "Tiger sculptures positioned at corners of base and on top of pillars",
