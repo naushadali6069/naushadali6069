@@ -5,7 +5,6 @@ import { portfolioProjects } from '../mock';
 const Portfolio = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
