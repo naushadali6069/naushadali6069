@@ -88,10 +88,24 @@ const Portfolio = () => {
                 {/* Navigation Arrows */}
                 {allImages.length > 1 && (
                   <>
-                    <button className="gallery-nav gallery-nav-prev" onClick={prevImage}>
+                    <button 
+                      className="gallery-nav gallery-nav-prev" 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        prevImage();
+                      }}
+                      type="button"
+                    >
                       <ChevronLeft size={28} />
                     </button>
-                    <button className="gallery-nav gallery-nav-next" onClick={nextImage}>
+                    <button 
+                      className="gallery-nav gallery-nav-next" 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        nextImage();
+                      }}
+                      type="button"
+                    >
                       <ChevronRight size={28} />
                     </button>
                   </>
