@@ -330,6 +330,59 @@ const Contact = () => {
           min-height: 100px;
         }
         
+        .status-message {
+          display: flex;
+          align-items: center;
+          gap: var(--spacing-xs);
+          padding: var(--spacing-medium);
+          border-radius: 12px;
+          margin-bottom: var(--spacing-medium);
+          font-weight: 600;
+          animation: slideIn 0.3s ease-out;
+        }
+        
+        .status-message.success {
+          background: rgba(45, 90, 45, 0.1);
+          color: var(--brand-primary);
+          border: 2px solid rgba(45, 90, 45, 0.2);
+        }
+        
+        .status-message.error {
+          background: rgba(220, 38, 38, 0.1);
+          color: #dc2626;
+          border: 2px solid rgba(220, 38, 38, 0.2);
+        }
+        
+        .spinner {
+          width: 20px;
+          height: 20px;
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          border-top: 2px solid white;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        }
+        
+        @keyframes slideIn {
+          0% { 
+            opacity: 0; 
+            transform: translateY(-10px); 
+          }
+          100% { 
+            opacity: 1; 
+            transform: translateY(0); 
+          }
+        }
+        
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        
+        button:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+        }
+        
         @media (max-width: 1024px) {
           .contact-content {
             grid-template-columns: 1fr;
