@@ -759,31 +759,38 @@ const Portfolio = () => {
           width: 100%;
           height: 400px;
           object-fit: cover;
-          transition: transform 0.3s ease;
+          transition: transform 0.5s ease, filter 0.3s ease;
+          border-radius: 12px;
         }
         
         .gallery-nav {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          background: rgba(255, 255, 255, 0.9);
+          background: rgba(255, 255, 255, 0.95);
           border: none;
-          width: 48px;
-          height: 48px;
+          width: 56px;
+          height: 56px;
           border-radius: 50%;
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
           color: var(--brand-primary);
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+          backdrop-filter: blur(10px);
         }
         
         .gallery-nav:hover {
           background: var(--brand-primary);
           color: white;
-          transform: translateY(-50%) scale(1.1);
+          transform: translateY(-50%) scale(1.15) rotate(5deg);
+          box-shadow: 0 12px 30px rgba(45, 90, 45, 0.4);
+        }
+        
+        .gallery-nav:active {
+          transform: translateY(-50%) scale(1.05);
         }
         
         .gallery-nav-prev {
