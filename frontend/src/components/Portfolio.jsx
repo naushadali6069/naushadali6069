@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { MapPin, Calendar, CheckCircle, Eye, ExternalLink, Camera, FileText } from 'lucide-react';
+import { MapPin, Calendar, CheckCircle, Eye, ExternalLink, Camera, FileText, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { portfolioProjects } from '../mock';
 
 const Portfolio = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,28 +26,100 @@ const Portfolio = () => {
   const ProjectModal = ({ project, onClose }) => {
     if (!project) return null;
     
+    // Create gallery array with main image + additional gallery images
+    const allImages = [
+      {
+        url: project.image,
+        caption: `${project.title} - Main View`,
+        description: project.description
+      },
+      ...(project.galleryImages || []).map((img, index) => ({
+        url: img,
+        caption: `${project.title} - View ${index + 2}`,
+        description: `Additional view of ${project.title} project`
+      }))
+    ];
+
+    const nextImage = () => {
+      setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
+    };
+
+    const prevImage = () => {
+      setCurrentImageIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
+    };
+
+    const goToImage = (index) => {
+      setCurrentImageIndex(index);
+    };
+
+    useEffect(() => {
+      setCurrentImageIndex(0); // Reset to first image when modal opens
+    }, [project]);
+
     return (
       <div className="modal-overlay" onClick={onClose}>
         <div className="modal-content" onClick={e => e.stopPropagation()}>
           <div className="modal-header">
             <h3 className="heading-2">{project.title}</h3>
-            <button className="close-btn" onClick={onClose}>×</button>
+            <button className="close-btn" onClick={onClose}>
+              <X size={24} />
+            </button>
           </div>
           
-          <div className="modal-image">
-            <img 
-              src={project.image} 
-              alt={`${project.title} - Placeholder for authentic project photos`}
-              style={{
-                width: '100%',
-                height: '300px',
-                objectFit: 'cover',
-                borderRadius: '16px'
-              }}
-            />
-            <div className="image-note">
-              <Camera size={16} />
-              <span>Placeholder - Authentic project photos available from PDF portfolio</span>
+          {/* Enhanced Image Gallery */}
+          <div className="modal-gallery">
+            <div className="gallery-main">
+              <div className="gallery-image-container">
+                <img 
+                  src={allImages[currentImageIndex]?.url} 
+                  alt={allImages[currentImageIndex]?.caption}
+                  className="gallery-main-image"
+                />
+                
+                {/* Navigation Arrows */}
+                {allImages.length > 1 && (
+                  <>
+                    <button className="gallery-nav gallery-nav-prev" onClick={prevImage}>
+                      <ChevronLeft size={24} />
+                    </button>
+                    <button className="gallery-nav gallery-nav-next" onClick={nextImage}>
+                      <ChevronRight size={24} />
+                    </button>
+                  </>
+                )}
+                
+                {/* Image Counter */}
+                {allImages.length > 1 && (
+                  <div className="image-counter">
+                    {currentImageIndex + 1} / {allImages.length}
+                  </div>
+                )}
+              </div>
+              
+              {/* Thumbnail Navigation */}
+              {allImages.length > 1 && (
+                <div className="gallery-thumbnails">
+                  {allImages.map((img, index) => (
+                    <button
+                      key={index}
+                      className={`thumbnail ${index === currentImageIndex ? 'active' : ''}`}
+                      onClick={() => goToImage(index)}
+                    >
+                      <img src={img.url} alt={img.caption} />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            
+            {/* Image Caption */}
+            <div className="image-caption">
+              <h4 className="body-medium" style={{ fontWeight: '600', marginBottom: '4px' }}>
+                {allImages[currentImageIndex]?.caption}
+              </h4>
+              <p className="body-small" style={{ color: 'var(--text-light)' }}>
+                {allImages[currentImageIndex]?.description}
+              </p>
             </div>
           </div>
           
@@ -155,12 +228,12 @@ const Portfolio = () => {
             marginBottom: 'var(--spacing-giant)',
             border: '2px dashed var(--brand-primary)'
           }}>
-            <FileText size={24} color="var(--brand-primary)" style={{ marginBottom: 'var(--spacing-small)' }} />
+            <Camera size={24} color="var(--brand-primary)" style={{ marginBottom: 'var(--spacing-small)' }} />
             <p className="body-medium" style={{ color: 'var(--brand-primary)', fontWeight: '600' }}>
-              📸 Authentic Project Photos Available
+              📸 Enhanced Photo Galleries Available
             </p>
             <p className="body-small" style={{ color: 'var(--text-light)' }}>
-              Current images are placeholders. Click "View Details" to see descriptions of actual project photos from your PDF portfolio, including gates, sculptures, interpretation centers, and eco-tourism facilities.
+              Click "View Authentic Details" to see project photo galleries with multiple angles, completion stages, and detailed views of our eco-tourism installations.
             </p>
           </div>
         </div>
@@ -184,12 +257,12 @@ const Portfolio = () => {
                     onClick={() => setSelectedProject(project)}
                   >
                     <Eye size={20} />
-                    View Authentic Details
+                    View Gallery ({(project.galleryImages?.length || 0) + 1} photos)
                   </button>
                 </div>
                 <div className="placeholder-badge">
                   <Camera size={12} />
-                  <span>From PDF</span>
+                  <span>{(project.galleryImages?.length || 0) + 1} photos</span>
                 </div>
               </div>
               
@@ -254,7 +327,7 @@ const Portfolio = () => {
                   className="view-more-btn"
                   onClick={() => setSelectedProject(project)}
                 >
-                  View Authentic Details
+                  View Photo Gallery
                   <ExternalLink size={16} style={{ marginLeft: '8px' }} />
                 </button>
               </div>
@@ -526,27 +599,30 @@ const Portfolio = () => {
           justify-content: center;
         }
         
+        /* Enhanced Modal Styles */
         .modal-overlay {
           position: fixed;
           top: 0;
           left: 0;
           right: 0;
           bottom: 0;
-          background: rgba(0, 0, 0, 0.8);
+          background: rgba(0, 0, 0, 0.9);
           display: flex;
           align-items: center;
           justify-content: center;
           z-index: 1000;
           padding: var(--spacing-medium);
+          backdrop-filter: blur(5px);
         }
         
         .modal-content {
           background: white;
           border-radius: 24px;
-          max-width: 800px;
-          max-height: 90vh;
+          max-width: 900px;
+          max-height: 95vh;
           overflow-y: auto;
           position: relative;
+          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
         }
         
         .modal-header {
@@ -555,40 +631,132 @@ const Portfolio = () => {
           align-items: center;
           padding: var(--spacing-large);
           border-bottom: 1px solid var(--border-light);
+          background: var(--bg-subtle);
+          border-radius: 24px 24px 0 0;
         }
         
         .close-btn {
           background: none;
           border: none;
-          font-size: 24px;
           cursor: pointer;
           padding: 8px;
           border-radius: 50%;
           transition: background 0.2s ease;
+          color: var(--text-primary);
         }
         
         .close-btn:hover {
-          background: var(--bg-subtle);
+          background: var(--bg-card);
         }
         
-        .modal-image {
-          padding: 0 var(--spacing-large);
+        /* Gallery Styles */
+        .modal-gallery {
+          padding: var(--spacing-large);
+        }
+        
+        .gallery-main {
           margin-bottom: var(--spacing-medium);
-          position: relative;
         }
         
-        .image-note {
+        .gallery-image-container {
+          position: relative;
+          border-radius: 16px;
+          overflow: hidden;
+          margin-bottom: var(--spacing-medium);
+        }
+        
+        .gallery-main-image {
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+        
+        .gallery-nav {
           position: absolute;
-          bottom: 8px;
-          right: 8px;
-          background: rgba(255, 255, 255, 0.95);
-          color: var(--text-light);
-          padding: 6px 12px;
-          border-radius: 12px;
-          font-size: 12px;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(255, 255, 255, 0.9);
+          border: none;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          cursor: pointer;
           display: flex;
           align-items: center;
-          gap: 4px;
+          justify-content: center;
+          color: var(--brand-primary);
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-nav:hover {
+          background: var(--brand-primary);
+          color: white;
+          transform: translateY(-50%) scale(1.1);
+        }
+        
+        .gallery-nav-prev {
+          left: 16px;
+        }
+        
+        .gallery-nav-next {
+          right: 16px;
+        }
+        
+        .image-counter {
+          position: absolute;
+          bottom: 16px;
+          right: 16px;
+          background: rgba(0, 0, 0, 0.8);
+          color: white;
+          padding: 6px 12px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: 600;
+        }
+        
+        .gallery-thumbnails {
+          display: flex;
+          gap: 8px;
+          overflow-x: auto;
+          padding: 8px 0;
+        }
+        
+        .thumbnail {
+          flex-shrink: 0;
+          width: 80px;
+          height: 60px;
+          border-radius: 8px;
+          overflow: hidden;
+          border: 2px solid transparent;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          background: none;
+          padding: 0;
+        }
+        
+        .thumbnail.active {
+          border-color: var(--brand-primary);
+          transform: scale(1.05);
+        }
+        
+        .thumbnail:hover {
+          border-color: var(--brand-accent);
+          transform: scale(1.02);
+        }
+        
+        .thumbnail img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        
+        .image-caption {
+          background: var(--bg-subtle);
+          padding: var(--spacing-medium);
+          border-radius: 12px;
+          margin-bottom: var(--spacing-medium);
         }
         
         .modal-body {
@@ -679,6 +847,20 @@ const Portfolio = () => {
           .modal-content {
             margin: var(--spacing-small);
             max-height: 95vh;
+          }
+          
+          .gallery-main-image {
+            height: 250px;
+          }
+          
+          .gallery-nav {
+            width: 40px;
+            height: 40px;
+          }
+          
+          .thumbnail {
+            width: 60px;
+            height: 45px;
           }
         }
       `}</style>
