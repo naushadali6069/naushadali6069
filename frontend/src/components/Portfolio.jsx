@@ -400,13 +400,13 @@ const Portfolio = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(135deg, rgba(27, 67, 50, 0.85) 0%, rgba(45, 90, 45, 0.9) 100%);
+          background: linear-gradient(135deg, rgba(27, 67, 50, 0.9) 0%, rgba(45, 90, 45, 0.95) 50%, rgba(70, 130, 60, 0.9) 100%);
           display: flex;
           align-items: center;
           justify-content: center;
           opacity: 0;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          backdrop-filter: blur(2px);
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          backdrop-filter: blur(4px);
         }
         
         .portfolio-card:hover .image-overlay {
