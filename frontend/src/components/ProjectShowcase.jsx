@@ -246,6 +246,7 @@ const ProjectShowcase = () => {
           height: 650px;
           overflow: hidden;
           border-radius: 24px;
+          background: white;
         }
 
         .slide-track {
@@ -258,13 +259,16 @@ const ProjectShowcase = () => {
           min-width: 100%;
           height: 100%;
           position: relative;
+          display: flex;
+          flex-direction: column;
         }
 
         .slide-image {
           width: 100%;
-          height: 100%;
+          height: 480px;
           position: relative;
           overflow: hidden;
+          border-radius: 24px 24px 0 0;
         }
 
         .slide-image img {
@@ -272,7 +276,7 @@ const ProjectShowcase = () => {
           height: 100%;
           object-fit: cover;
           transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
-          filter: brightness(1.05) contrast(1.1) saturate(1.1);
+          filter: brightness(1.1) contrast(1.15) saturate(1.2);
         }
 
         .slide:hover .slide-image img {
@@ -286,35 +290,29 @@ const ProjectShowcase = () => {
           right: 0;
           bottom: 0;
           background: linear-gradient(
-            135deg,
-            rgba(0, 0, 0, 0.1) 0%,
-            rgba(0, 0, 0, 0.2) 40%,
-            rgba(27, 67, 50, 0.6) 100%
+            180deg,
+            rgba(0, 0, 0, 0.05) 0%,
+            rgba(0, 0, 0, 0.1) 100%
           );
-          display: flex;
-          align-items: flex-end;
-          padding: 0;
           pointer-events: none;
         }
 
         .slide-content {
-          color: white;
-          max-width: 450px;
-          margin: var(--spacing-large);
-          background: rgba(0, 0, 0, 0.7);
+          background: linear-gradient(135deg, rgba(248, 250, 252, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
           padding: var(--spacing-large);
-          border-radius: 20px;
-          backdrop-filter: blur(15px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          transform: translateY(20px);
-          animation: slideContentUp 0.8s ease-out forwards;
-          pointer-events: auto;
+          height: 170px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-radius: 0 0 24px 24px;
+          border-top: 1px solid rgba(27, 67, 50, 0.1);
+          backdrop-filter: blur(10px);
+          box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
         }
 
-        @keyframes slideContentUp {
-          to {
-            transform: translateY(0);
-          }
+        .slide-info {
+          flex: 1;
+          max-width: 70%;
         }
 
         .slide-category {
@@ -333,11 +331,10 @@ const ProjectShowcase = () => {
         }
 
         .slide-title {
-          color: white;
+          color: var(--brand-primary);
           margin-bottom: var(--spacing-small);
           font-size: 1.8rem;
           font-weight: 700;
-          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
           line-height: 1.2;
         }
 
@@ -351,14 +348,13 @@ const ProjectShowcase = () => {
           display: flex;
           align-items: center;
           gap: 4px;
-          color: rgba(255, 255, 255, 0.9);
-          font-size: 12px;
+          color: var(--text-light);
+          font-size: 13px;
           font-weight: 500;
         }
 
         .slide-description {
-          color: rgba(255, 255, 255, 0.95);
-          margin-bottom: var(--spacing-medium);
+          color: var(--text-secondary);
           line-height: 1.5;
           font-size: 14px;
           display: -webkit-box;
@@ -367,35 +363,33 @@ const ProjectShowcase = () => {
           overflow: hidden;
         }
 
+        .slide-actions {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          margin-left: var(--spacing-large);
+        }
+
         .video-placeholder-btn {
           display: flex;
           align-items: center;
           gap: 8px;
-          background: rgba(255, 255, 255, 0.15);
-          border: 1px solid rgba(255, 255, 255, 0.3);
+          background: var(--brand-primary);
+          border: none;
           color: white;
-          padding: 10px var(--spacing-medium);
-          border-radius: 25px;
+          padding: var(--spacing-medium) var(--spacing-large);
+          border-radius: 30px;
           cursor: pointer;
           transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
           font-weight: 600;
-          font-size: 13px;
-          backdrop-filter: blur(10px);
-          transform: scale(0.95);
-          animation: buttonPop 0.6s ease-out 0.3s forwards;
-        }
-
-        @keyframes buttonPop {
-          to {
-            transform: scale(1);
-          }
+          font-size: 14px;
+          box-shadow: 0 4px 15px rgba(45, 90, 45, 0.3);
         }
 
         .video-placeholder-btn:hover {
-          background: rgba(255, 255, 255, 0.25);
-          border-color: rgba(255, 255, 255, 0.5);
+          background: var(--brand-accent);
           transform: translateY(-2px) scale(1.02);
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 8px 25px rgba(45, 90, 45, 0.4);
         }
 
         .slide-nav {
