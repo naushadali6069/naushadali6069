@@ -230,8 +230,39 @@ const Contact = () => {
                 />
               </div>
               
-              <button type="submit" className="btn-primary" style={{ width: '100%' }}>
-                Send Message <ArrowRight size={20} style={{ marginLeft: '8px' }} />
+              {/* Status Messages */}
+              {submitStatus && (
+                <div className={`status-message ${submitStatus}`}>
+                  {submitStatus === 'success' ? (
+                    <>
+                      <CheckCircle size={20} />
+                      <span>Thank you! Your message has been sent successfully. We'll get back to you soon.</span>
+                    </>
+                  ) : (
+                    <>
+                      <AlertCircle size={20} />
+                      <span>Sorry, there was an error sending your message. Please try again or contact us directly.</span>
+                    </>
+                  )}
+                </div>
+              )}
+              
+              <button 
+                type="submit" 
+                className="btn-primary" 
+                style={{ width: '100%' }}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <div className="spinner" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message <ArrowRight size={20} style={{ marginLeft: '8px' }} />
+                  </>
+                )}
               </button>
             </form>
           </div>
