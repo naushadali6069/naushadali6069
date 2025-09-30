@@ -37,18 +37,48 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Mock form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you for your interest! We will contact you soon.');
-    setFormData({
-      name: '',
-      email: '',
-      organization: '',
-      project: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    
+    try {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      const result = await response.json();
+      console.log('Form submitted successfully:', result);
+      
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        organization: '',
+        project: '',
+        message: ''
+      });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+      
+      // Reset error message after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
