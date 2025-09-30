@@ -75,12 +75,12 @@ export const portfolioProjects = [
     category: "Wildlife Conservation",
     description: "Multiple projects including famous selfie points, Nature Interpretation Centers, and eco-tourism infrastructure.",
     image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/rtxqtt0u_IMG_7030.png",
-    actualImages: [
-      "Rustic wooden archway with 'PILIBHIT TIGER RESERVE' carved sign, natural organic design with branches and foliage",
-      "Wooden archway with thatched roof and tiger/deer sculptures at base for Saptasarovar area",
-      "Nature Interpretation Centre building with artificial tree and tiger/deer sculptures at entrance",
-      "Interior dioramas featuring tigers, leopards, deer, and birds with interactive displays",
-      "Eco-friendly tents and cottages with thatched roofs and wooden accents"
+    galleryImages: [
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/j15fm2xa_Screenshot%202024-12-14%20at%207.31.52%E2%80%AFPM.png",
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/9hy7iqcy_pixelcut-export-2.png",
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/73d7e8dn_updated.jpg",
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/x8f0mov8_IMG_5246.png",
+      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/2avme0r8_IMG_6129.png"
     ],
     highlights: [
       "Most popular selfie point in Mustafabad Range",
