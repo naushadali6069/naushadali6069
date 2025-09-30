@@ -126,7 +126,11 @@ const Portfolio = () => {
                     <button
                       key={index}
                       className={`thumbnail ${index === currentImageIndex ? 'active' : ''}`}
-                      onClick={() => goToImage(index)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        goToImage(index);
+                      }}
+                      type="button"
                     >
                       <img src={img.url} alt={img.caption} />
                     </button>
