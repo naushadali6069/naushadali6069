@@ -69,6 +69,43 @@ async def get_status_checks():
     status_checks = await db.status_checks.find().to_list(1000)
     return [StatusCheck(**status_check) for status_check in status_checks]
 
+# Contact Form Endpoints
+@api_router.post("/contact", response_model=ContactSubmission)
+async def submit_contact_form(input: ContactSubmissionCreate):
+    """Submit a new contact form"""
+    try:
+        contact_dict = input.dict()
+        contact_obj = ContactSubmission(**contact_dict)
+        
+        # Prepare data for MongoDB (convert datetime to ISO string)
+        contact_data = contact_obj.dict()
+        contact_data['timestamp'] = contact_data['timestamp'].isoformat()
+        
+        # Insert into database
+        await db.contact_submissions.insert_one(contact_data)
+        
+        logger.info(f"New contact submission from {contact_obj.name} <{contact_obj.email}>")
+        return contact_obj
+    except Exception as e:
+        logger.error(f"Error submitting contact form: {str(e)}")
+        raise
+
+@api_router.get("/contact", response_model=List[ContactSubmission])
+async def get_contact_submissions():
+    """Get all contact form submissions"""
+    try:
+        submissions = await db.contact_submissions.find().sort("timestamp", -1).to_list(1000)
+        
+        # Parse timestamp from ISO string back to datetime
+        for submission in submissions:
+            if isinstance(submission.get('timestamp'), str):
+                submission['timestamp'] = datetime.fromisoformat(submission['timestamp'])
+        
+        return [ContactSubmission(**submission) for submission in submissions]
+    except Exception as e:
+        logger.error(f"Error retrieving contact submissions: {str(e)}")
+        raise
+
 # Include the router in the main app
 app.include_router(api_router)
 
