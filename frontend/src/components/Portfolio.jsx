@@ -390,8 +390,8 @@ const Portfolio = () => {
         }
         
         .portfolio-card:hover .project-image img {
-          transform: scale(1.15) rotate(2deg);
-          filter: brightness(1.1) contrast(1.05);
+          transform: scale(1.2) rotate(3deg);
+          filter: brightness(1.15) contrast(1.1) saturate(1.1);
         }
         
         .image-overlay {
