@@ -119,7 +119,6 @@ export const portfolioProjects = [
     galleryImages: [
       "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/kons7idf_IMG_0607.png",
       "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/df5i4ukl_IMG_7650.png",
-      "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/do8nu4hw_IMG_0607.png",
       "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/odacjqvd_PHOTO-2025-01-11-15-30-52.jpg",
       "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/tzl2zdvo_PHOTO-2025-01-11-15-30-54.jpg",
       "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/w0dn6csg_PHOTO-2018-12-20-11-17-14%202.jpg"
