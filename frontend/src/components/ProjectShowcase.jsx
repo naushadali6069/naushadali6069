@@ -555,17 +555,23 @@ const ProjectShowcase = () => {
         /* Responsive Design */
         @media (max-width: 768px) {
           .slide-display {
-            height: 500px;
+            height: 550px;
           }
 
-          .slide-overlay {
-            padding: 0;
+          .slide-image {
+            height: 380px;
           }
 
           .slide-content {
-            max-width: none;
-            margin: var(--spacing-medium);
+            height: 170px;
             padding: var(--spacing-medium);
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--spacing-small);
+          }
+
+          .slide-info {
+            max-width: 100%;
           }
 
           .slide-title {
@@ -579,7 +585,17 @@ const ProjectShowcase = () => {
 
           .slide-description {
             font-size: 13px;
-            -webkit-line-clamp: 3;
+            -webkit-line-clamp: 2;
+          }
+
+          .slide-actions {
+            margin-left: 0;
+            align-self: flex-end;
+          }
+
+          .video-placeholder-btn {
+            padding: var(--spacing-small) var(--spacing-medium);
+            font-size: 13px;
           }
 
           .slide-nav {
@@ -600,11 +616,6 @@ const ProjectShowcase = () => {
             height: 3px;
           }
 
-          .video-placeholder-btn {
-            padding: 8px var(--spacing-small);
-            font-size: 12px;
-          }
-
           .autoplay-control {
             top: var(--spacing-small);
             right: var(--spacing-small);
@@ -613,28 +624,35 @@ const ProjectShowcase = () => {
 
         @media (max-width: 480px) {
           .slide-display {
-            height: 400px;
+            height: 480px;
             border-radius: 16px;
           }
 
+          .slide-image {
+            height: 320px;
+            border-radius: 16px 16px 0 0;
+          }
+
           .slide-content {
-            margin: var(--spacing-small);
+            height: 160px;
             padding: var(--spacing-small);
-            border-radius: 12px;
+            border-radius: 0 0 16px 16px;
           }
 
           .slide-title {
             font-size: 1.3rem;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
           }
 
           .slide-description {
+            font-size: 12px;
             margin-bottom: var(--spacing-small);
+            -webkit-line-clamp: 1;
           }
 
           .video-placeholder-btn {
-            padding: 6px var(--spacing-small);
-            font-size: 11px;
+            padding: 8px var(--spacing-small);
+            font-size: 12px;
             gap: 6px;
           }
         }
