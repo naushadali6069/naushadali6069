@@ -71,19 +71,24 @@ const Portfolio = () => {
             <div className="gallery-main">
               <div className="gallery-image-container">
                 <img 
+                  key={currentImageIndex} // Force re-render for transition
                   src={allImages[currentImageIndex]?.url} 
                   alt={allImages[currentImageIndex]?.caption}
                   className="gallery-main-image"
+                  style={{ 
+                    animation: 'imageSlideIn 0.4s ease-out',
+                    filter: 'brightness(1.02) contrast(1.05)'
+                  }}
                 />
                 
                 {/* Navigation Arrows */}
                 {allImages.length > 1 && (
                   <>
                     <button className="gallery-nav gallery-nav-prev" onClick={prevImage}>
-                      <ChevronLeft size={24} />
+                      <ChevronLeft size={28} />
                     </button>
                     <button className="gallery-nav gallery-nav-next" onClick={nextImage}>
-                      <ChevronRight size={24} />
+                      <ChevronRight size={28} />
                     </button>
                   </>
                 )}
