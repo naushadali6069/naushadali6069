@@ -818,6 +818,8 @@ const Portfolio = () => {
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
           backdrop-filter: blur(10px);
+          z-index: 10;
+          pointer-events: auto;
         }
         
         .gallery-nav:hover {
