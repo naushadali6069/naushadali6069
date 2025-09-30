@@ -402,105 +402,156 @@ const ProjectShowcase = () => {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          background: rgba(255, 255, 255, 0.9);
+          background: rgba(255, 255, 255, 0.95);
           border: none;
-          width: 64px;
-          height: 64px;
+          width: 56px;
+          height: 56px;
           border-radius: 50%;
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
           color: var(--brand-primary);
-          transition: all 0.3s ease;
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-          z-index: 10;
+          transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+          z-index: 15;
+          backdrop-filter: blur(20px);
+          border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .slide-nav:hover {
           background: var(--brand-primary);
           color: white;
-          transform: translateY(-50%) scale(1.1);
-          box-shadow: 0 12px 35px rgba(45, 90, 45, 0.3);
+          transform: translateY(-50%) scale(1.15);
+          box-shadow: 0 12px 40px rgba(45, 90, 45, 0.4);
+          border-color: var(--brand-primary);
+        }
+
+        .slide-nav:active {
+          transform: translateY(-50%) scale(1.05);
         }
 
         .slide-nav-prev {
           left: var(--spacing-large);
+          animation: slideInLeft 0.6s ease-out 0.5s both;
         }
 
         .slide-nav-next {
           right: var(--spacing-large);
+          animation: slideInRight 0.6s ease-out 0.5s both;
+        }
+
+        @keyframes slideInLeft {
+          from {
+            opacity: 0;
+            transform: translateY(-50%) translateX(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+          }
+        }
+
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateY(-50%) translateX(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+          }
         }
 
         .slide-indicators {
           display: flex;
           justify-content: center;
-          gap: var(--spacing-small);
+          gap: 12px;
           padding: var(--spacing-large);
-          background: rgba(255, 255, 255, 0.95);
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.98) 100%);
+          backdrop-filter: blur(10px);
         }
 
         .indicator {
-          width: 60px;
-          height: 6px;
+          width: 50px;
+          height: 4px;
           background: rgba(27, 67, 50, 0.2);
           border: none;
-          border-radius: 3px;
+          border-radius: 2px;
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
           position: relative;
           overflow: hidden;
         }
 
-        .indicator-progress {
+        .indicator::before {
+          content: '';
           position: absolute;
           top: 0;
           left: 0;
           height: 100%;
-          background: var(--brand-primary);
-          border-radius: 3px;
           width: 0;
-          transition: width 0.3s ease;
+          background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
+          border-radius: 2px;
+          transition: width 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .indicator:hover {
+          background: rgba(27, 67, 50, 0.3);
+          transform: scaleY(1.5);
         }
 
         .indicator.active {
-          background: var(--brand-primary);
+          background: rgba(27, 67, 50, 0.3);
+          transform: scaleY(1.5);
         }
 
-        .indicator.active .indicator-progress {
+        .indicator.active::before {
           width: 100%;
-          animation: progress 5s linear;
+          animation: progressFill 5s linear;
         }
 
-        @keyframes progress {
+        @keyframes progressFill {
           from { width: 0; }
           to { width: 100%; }
         }
 
+        .indicator-progress {
+          display: none;
+        }
+
         .autoplay-control {
           position: absolute;
-          bottom: var(--spacing-medium);
+          top: var(--spacing-medium);
           right: var(--spacing-medium);
+          z-index: 20;
         }
 
         .autoplay-btn {
-          background: rgba(0, 0, 0, 0.6);
+          background: rgba(0, 0, 0, 0.7);
           color: white;
-          border: none;
-          padding: var(--spacing-small) var(--spacing-medium);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          padding: 8px var(--spacing-medium);
           border-radius: 20px;
-          font-size: 12px;
+          font-size: 11px;
+          font-weight: 600;
           cursor: pointer;
           transition: all 0.3s ease;
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(15px);
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
         }
 
         .autoplay-btn:hover {
-          background: rgba(0, 0, 0, 0.8);
+          background: rgba(0, 0, 0, 0.9);
+          border-color: rgba(255, 255, 255, 0.4);
+          transform: scale(1.05);
         }
 
         .autoplay-btn.active {
           background: var(--brand-primary);
+          border-color: var(--brand-primary);
+          box-shadow: 0 4px 15px rgba(45, 90, 45, 0.3);
         }
 
         /* Responsive Design */
