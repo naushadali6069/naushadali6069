@@ -506,86 +506,145 @@ const ArtisticCreations = () => {
           margin: 0 auto;
         }
 
-        .progress-content {
+        .progress-gallery {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: var(--spacing-giant);
-          align-items: center;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: var(--spacing-large);
+          margin-bottom: var(--spacing-giant);
         }
 
-        .progress-text h3 {
-          color: var(--brand-primary);
-          font-size: 2rem;
-          font-weight: 700;
-          margin-bottom: var(--spacing-small);
+        .progress-card {
+          background: white;
+          border-radius: 24px;
+          overflow: hidden;
+          box-shadow: 0 15px 60px rgba(27, 67, 50, 0.1);
+          transition: all 0.4s ease;
+          animation: fadeInUp 0.6s ease-out both;
         }
 
-        .progress-text h4 {
-          color: var(--brand-accent);
-          font-size: 1.5rem;
-          font-weight: 600;
-          margin-bottom: var(--spacing-medium);
-        }
-
-        .progress-text p {
-          color: var(--text-secondary);
-          line-height: 1.7;
-          margin-bottom: var(--spacing-large);
-        }
-
-        .key-features h5 {
-          color: var(--brand-primary);
-          font-weight: 700;
-          margin-bottom: var(--spacing-medium);
-        }
-
-        .key-features ul {
-          list-style: none;
-          padding: 0;
-        }
-
-        .key-features li {
-          color: var(--text-secondary);
-          line-height: 1.6;
-          margin-bottom: var(--spacing-small);
-          padding-left: var(--spacing-medium);
-          position: relative;
-        }
-
-        .key-features li::before {
-          content: '●';
-          color: var(--brand-accent);
-          position: absolute;
-          left: 0;
+        .progress-card:hover {
+          transform: translateY(-12px);
+          box-shadow: 0 25px 80px rgba(27, 67, 50, 0.15);
         }
 
         .progress-image {
           position: relative;
-          border-radius: 24px;
+          height: 280px;
           overflow: hidden;
-          box-shadow: 0 20px 60px rgba(27, 67, 50, 0.15);
         }
 
         .progress-image img {
           width: 100%;
-          height: 400px;
+          height: 100%;
           object-fit: cover;
+          transition: transform 0.5s ease;
         }
 
-        .progress-info {
+        .progress-card:hover .progress-image img {
+          transform: scale(1.1);
+        }
+
+        .progress-overlay {
           position: absolute;
-          bottom: var(--spacing-medium);
-          left: var(--spacing-medium);
+          top: var(--spacing-medium);
+          right: var(--spacing-medium);
         }
 
         .progress-badge span {
-          background: rgba(0, 0, 0, 0.8);
+          background: rgba(255, 165, 0, 0.9);
           color: white;
-          padding: var(--spacing-small) var(--spacing-medium);
-          border-radius: 20px;
-          font-size: 13px;
+          padding: var(--spacing-xs) var(--spacing-small);
+          border-radius: 15px;
+          font-size: 12px;
           font-weight: 600;
+          text-transform: uppercase;
           backdrop-filter: blur(10px);
+        }
+
+        .progress-content {
+          padding: var(--spacing-large);
+        }
+
+        .progress-title {
+          color: var(--brand-primary);
+          font-size: 1.3rem;
+          font-weight: 700;
+          margin-bottom: var(--spacing-small);
+        }
+
+        .progress-description {
+          color: var(--text-secondary);
+          line-height: 1.6;
+          margin-bottom: var(--spacing-medium);
+        }
+
+        .progress-details {
+          border-top: 2px solid var(--bg-subtle);
+          padding-top: var(--spacing-small);
+        }
+
+        .progress-stage {
+          color: var(--text-light);
+          font-size: 14px;
+        }
+
+        .progress-stage strong {
+          color: var(--brand-primary);
+        }
+
+        .workshop-description {
+          background: white;
+          padding: var(--spacing-giant);
+          border-radius: 24px;
+          box-shadow: 0 15px 60px rgba(27, 67, 50, 0.1);
+        }
+
+        .workshop-description h3 {
+          color: var(--brand-primary);
+          font-size: 2rem;
+          font-weight: 700;
+          text-align: center;
+          margin-bottom: var(--spacing-medium);
+        }
+
+        .workshop-description > p {
+          color: var(--text-secondary);
+          line-height: 1.7;
+          text-align: center;
+          max-width: 800px;
+          margin: 0 auto var(--spacing-large);
+          font-size: 1.1rem;
+        }
+
+        .process-steps {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: var(--spacing-large);
+        }
+
+        .step {
+          text-align: center;
+          padding: var(--spacing-large);
+          background: var(--bg-subtle);
+          border-radius: 16px;
+          transition: all 0.3s ease;
+        }
+
+        .step:hover {
+          background: rgba(70, 130, 60, 0.05);
+          transform: translateY(-4px);
+        }
+
+        .step h5 {
+          color: var(--brand-primary);
+          font-size: 1.1rem;
+          font-weight: 700;
+          margin-bottom: var(--spacing-small);
+        }
+
+        .step p {
+          color: var(--text-light);
+          font-size: 14px;
         }
 
         .sculptures-cta {
