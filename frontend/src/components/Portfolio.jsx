@@ -247,22 +247,6 @@ const Portfolio = () => {
             />
           </div>
           
-          <div className="pdf-note" style={{ 
-            textAlign: 'center', 
-            background: 'var(--bg-card)', 
-            padding: 'var(--spacing-medium)', 
-            borderRadius: '16px',
-            marginBottom: 'var(--spacing-giant)',
-            border: '2px dashed var(--brand-primary)'
-          }}>
-            <Camera size={24} color="var(--brand-primary)" style={{ marginBottom: 'var(--spacing-small)' }} />
-            <p className="body-medium" style={{ color: 'var(--brand-primary)', fontWeight: '600' }}>
-              📸 Enhanced Photo Galleries Available
-            </p>
-            <p className="body-small" style={{ color: 'var(--text-light)' }}>
-              Click "View Authentic Details" to see project photo galleries with multiple angles, completion stages, and detailed views of our eco-tourism installations.
-            </p>
-          </div>
         </div>
         
         <div className="portfolio-grid">
