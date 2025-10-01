@@ -232,37 +232,62 @@ const ArtisticCreations = () => {
           {/* In Progress Sculptures */}
           {activeTab === 'inProgress' && (
             <div className="progress-section">
-              <div className="progress-content">
-                <div className="progress-text">
-                  <h3>Sculptures in Progress</h3>
-                  <h4>Crafting the Next Masterpieces</h4>
-                  <p>
-                    Our current projects showcase the dedication of our artists and designers as they work on 
-                    new concepts with meticulous attention to detail. Each sculpture undergoes a thoughtful 
-                    process from conceptualization to completion, ensuring it aligns with the natural themes 
-                    of the project site.
-                  </p>
-                  
-                  <div className="key-features">
-                    <h5>Key Features of Ongoing Work:</h5>
-                    <ul>
-                      <li><strong>Diverse Concepts:</strong> Wildlife figures, floral themes, and symbolic installations</li>
-                      <li><strong>Artistic Collaboration:</strong> Designers, sculptors, and eco-experts working together</li>
-                      <li><strong>Sustainability Focus:</strong> Continuing use of eco-friendly materials in the creative process</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div className="progress-image">
-                  <img 
-                    src={sculptureData.inProgress[0].image} 
-                    alt={sculptureData.inProgress[0].title}
-                    loading="lazy"
-                  />
-                  <div className="progress-info">
-                    <div className="progress-badge">
-                      <span>In Progress - {sculptureData.inProgress[0].completion}</span>
+              <div className="progress-gallery">
+                {sculptureData.inProgress.map((sculpture, index) => (
+                  <div 
+                    key={sculpture.id} 
+                    className="progress-card"
+                    style={{ animationDelay: `${index * 200}ms` }}
+                  >
+                    <div className="progress-image">
+                      <img 
+                        src={sculpture.image} 
+                        alt={sculpture.title}
+                        loading="lazy"
+                      />
+                      <div className="progress-overlay">
+                        <div className="progress-badge">
+                          <span>{sculpture.completion} Complete</span>
+                        </div>
+                      </div>
                     </div>
+                    <div className="progress-content">
+                      <h4 className="progress-title">{sculpture.title}</h4>
+                      <p className="progress-description">{sculpture.description}</p>
+                      <div className="progress-details">
+                        <div className="progress-stage">
+                          <strong>Current Stage:</strong> {sculpture.stage}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="workshop-description">
+                <h3>Our Artistic Process</h3>
+                <p>
+                  Each sculpture begins with careful study of the animal's anatomy and behavior. Our master craftsmen 
+                  use traditional techniques combined with modern materials to create lifelike representations that 
+                  inspire conservation awareness and connect visitors with nature's beauty.
+                </p>
+                
+                <div className="process-steps">
+                  <div className="step">
+                    <h5>1. Concept & Design</h5>
+                    <p>Research and sketching phase</p>
+                  </div>
+                  <div className="step">
+                    <h5>2. Clay Modeling</h5>
+                    <p>Creating initial form and proportions</p>
+                  </div>
+                  <div className="step">
+                    <h5>3. Detail Work</h5>
+                    <p>Adding texture, features, and expressions</p>
+                  </div>
+                  <div className="step">
+                    <h5>4. Final Finishing</h5>
+                    <p>Painting, sealing, and quality checks</p>
                   </div>
                 </div>
               </div>
