@@ -281,6 +281,32 @@ export const portfolioProjects = [
     client: "Forest Division Prayagraj & Namami Gange Initiative",
     status: "Completed",
     detailedDescription: "This landmark wildlife conservation exhibition was strategically positioned along the sacred Ganga banks during the 2019 Kumbh Mela, one of the world's largest religious gatherings. Developed under the prestigious Namami Gange initiative, the exhibition featured spectacular life-size wildlife dioramas showcasing the rich biodiversity of the Ganga ecosystem and Uttar Pradesh's wildlife corridors. The multi-level naturalistic displays included majestic lions, tigers, elephants, and leopards in carefully crafted jungle settings, complemented by comprehensive educational panels highlighting endangered aquatic species such as the Ganges Dolphin, various turtle species, and gharials. The exhibition successfully raised awareness among millions of visitors about wildlife conservation and the critical importance of protecting the Ganga's unique ecosystem, earning recognition from the highest levels of government including a personal endorsement from the State Forest Minister."
+  },
+  {
+    id: 9,
+    title: "Lakshmanpuri Ecotourism Reserve",
+    location: "Awadh Forest Division, Uttar Pradesh",
+    year: "2024",
+    category: "Ecotourism Development",
+    description: "State-of-the-art 'Eco Spot' installation featuring lifelike wildlife dioramas in naturalistic forest setting, inaugurated by Honourable PCCF Wildlife.",
+    image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/s3clzn0g_image.png",
+    galleryImages: [
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/tagk1ao3_IMG_7099.jpg"
+    ],
+    highlights: [
+      "Spectacular 'Eco Spot' wildlife diorama with multiple species display",
+      "Life-sized tiger sculpture as centerpiece in naturalistic pose",
+      "Graceful deer sculpture with detailed antler work and natural coloring",
+      "Beautiful crane and kingfisher birds showcasing local avian diversity",
+      "Authentic forest environment with trees, rocks, and natural landscaping",
+      "Professional signage with 'Lakshmanpuri Ecotourism Reserve' branding",
+      "Purple flowering plants and green landscaping enhancing visual appeal",
+      "Official inauguration by Honourable PCCF Wildlife in 2024",
+      "Latest addition to Uttar Pradesh's ecotourism infrastructure network"
+    ],
+    client: "Awadh Forest Division, Government of Uttar Pradesh",
+    status: "Completed",
+    detailedDescription: "The Lakshmanpuri Ecotourism Reserve represents Forest Vision Alliance's latest achievement in creating immersive wildlife education experiences. This state-of-the-art 'Eco Spot' installation features a spectacular wildlife diorama showcasing the region's biodiversity through meticulously crafted life-sized sculptures including a majestic tiger as the centerpiece, elegant deer with detailed antler work, graceful crane, and colorful kingfisher, all set within an authentic forest environment complete with natural trees, rock formations, and carefully designed landscaping. The project was officially inaugurated by the Honourable Principal Chief Conservator of Forests (Wildlife) in 2024, marking another milestone in Uttar Pradesh's expanding ecotourism infrastructure. The installation serves as both an educational tool for wildlife conservation awareness and a significant attraction for visitors to the Awadh Forest Division."
   }
 ];
 
