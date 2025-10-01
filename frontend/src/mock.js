@@ -103,19 +103,12 @@ export const portfolioProjects = [
   },
   {
     id: 3,
-    title: "Lucknow Zoo Butterfly Park",
+    title: "Lucknow Zoo Projects",
     location: "Lucknow, Uttar Pradesh",
-    year: "2016-18",
-    category: "Urban Wildlife",
-    description: "Uttar Pradesh's first Butterfly Park with artistic installations and comprehensive interpretation center.",
+    year: "2016-18", 
+    category: "Urban Wildlife & Zoo Development",
+    description: "Comprehensive zoo enhancement project including Butterfly Park, Nature Interpretation Centre, Selfie Points, and complete landscaping transformation.",
     image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/9mnbtpes_IMG_0670.png",
-    actualImages: [
-      "Majestic golden lion sculpture mounted on ornate gate entrance with flags and decorations",
-      "Charming wooden archway with butterfly motifs and artistic butterfly illustrations",
-      "Nature Interpretation Centre exterior with deer sculptures and leopard above entrance",
-      "Interior LED displays showcasing wildlife facts and identification charts",
-      "Large colorful butterfly sculpture in garden setting"
-    ],
     galleryImages: [
       "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/kons7idf_IMG_0607.png",
       "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/df5i4ukl_IMG_7650.png",
@@ -124,18 +117,19 @@ export const portfolioProjects = [
       "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/w0dn6csg_PHOTO-2018-12-20-11-17-14%202.jpg"
     ],
     highlights: [
-      "Majestic golden lion sculpture as focal point of entrance",
-      "Butterfly-themed wooden gate with artistic illustrations", 
-      "3D wildlife dioramas as interactive selfie points",
-      "Modern LED information boards and displays",
-      "First Butterfly Park in Uttar Pradesh",
-      "Nature Interpretation Centre with comprehensive wildlife information",
-      "Interpretation Center inaugurated by Hon'ble CM in 2017",
-      "Butterfly Park inaugurated by Hon'ble Minister in 2018"
+      "Butterfly Park: Uttar Pradesh's first dedicated butterfly conservation center",
+      "Nature Interpretation Centre: Interactive educational displays and dioramas", 
+      "Selfie Points: Strategic photo opportunities with wildlife themes",
+      "Complete Landscaping: Comprehensive garden design and plant installation",
+      "Artistic installations with colorful butterfly displays and educational boards",
+      "Wildlife dioramas featuring local fauna and conservation messaging",
+      "Modern LED information displays and interactive learning stations",
+      "Visitor-friendly pathways connecting all zoo sections",
+      "Multi-year project spanning 2016-2018 development phases"
     ],
-    client: "Nawab Wajid Ali Shah Zoological Garden",
+    client: "Lucknow Zoo Authority",
     status: "Completed",
-    detailedDescription: "A pioneering project that created Uttar Pradesh's first Butterfly Park, featuring a stunning golden lion sculpture as the entrance focal point, charming wooden archway with butterfly motifs and artistic illustrations, comprehensive interpretation center with modern LED displays, and immersive 3D wildlife dioramas that serve as both educational tools and popular interactive selfie points."
+    detailedDescription: "This flagship urban wildlife project represents a comprehensive transformation of Lucknow Zoo through four major components: the creation of Uttar Pradesh's first Butterfly Park featuring artistic installations and live butterfly habitats, a state-of-the-art Nature Interpretation Centre with interactive educational displays and wildlife dioramas, strategically placed Selfie Points with wildlife themes for visitor engagement, and complete landscaping renovation including garden design, pathways, and plant installations. The multi-year initiative successfully enhanced the zoo's educational value while creating an engaging visitor experience that promotes wildlife conservation awareness among urban populations."
   },
   {
     id: 4,
