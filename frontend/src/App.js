@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import ProjectShowcase from "./components/ProjectShowcase";
 import About from "./components/About";
 import Services from "./components/Services";
+import ArtisticCreations from "./components/ArtisticCreations";
 import Portfolio from "./components/Portfolio";
 import Testimonials from "./components/Testimonials";
 import Sustainability from "./components/Sustainability";
@@ -20,6 +21,7 @@ function App() {
       <ProjectShowcase />
       <About />
       <Services />
+      <ArtisticCreations />
       <Portfolio />
       <Testimonials />
       <Sustainability />
