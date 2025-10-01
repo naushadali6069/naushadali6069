@@ -357,7 +357,7 @@ export const testimonials = [
     position: "Minister for Forest and Wildlife",
     organization: "Government of Uttar Pradesh",
     quote: "The Butterfly Park and interpretation centers created by Forest Vision Alliance have significantly enhanced visitor experience while promoting conservation awareness.",
-    project: "Lucknow Zoo Butterfly Park"
+    project: "Lucknow Zoo Projects"
   }
 ];
 
