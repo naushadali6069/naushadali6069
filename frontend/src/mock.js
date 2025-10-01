@@ -233,6 +233,32 @@ export const portfolioProjects = [
     client: "Chitrakoot Forest Division",
     status: "Completed", 
     detailedDescription: "A magnificent entrance gateway showcasing traditional stone craftsmanship combined with modern conservation messaging, featuring a large stone-built structure with substantial tiger sculptures positioned at the corners of the base and on top of pillars, complemented by secondary rustic wooden entrances and informational boards promoting eco-tourism and wildlife conservation awareness."
+  },
+  {
+    id: 7,
+    title: "Ghera Richhola Wetland Project",
+    location: "Ghera Richhola, Pilibhit (19 km from Pilibhit on Pilibhit-Madhotanda Road)",
+    year: "2022-23",
+    category: "Wetland Conservation & Eco-Tourism",
+    description: "Natural wetland habitat for migratory birds transformed into a prominent eco-tourism destination with thematic gates and nature huts.",
+    image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/4u896zvb_6DC45E9E-E2C1-4E3E-87CF-4A76518CAB98.JPEG",
+    galleryImages: [
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/i6ogyeli_7e37cf21-7471-4214-b9e7-905dd5bc31ba.JPG",
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/2vhgslin_F76EEBBB-2F51-4216-A73B-8AABC8209BB7.JPEG"
+    ],
+    highlights: [
+      "Natural wetland habitat for migratory birds including peacocks, cranes, and herons",
+      "Beautifully designed thematic entrance gate with local wildlife sculptures", 
+      "Traditional thatched roof nature hut with visitor seating arrangements",
+      "Brick pathways connecting visitor facilities",
+      "Ecologically significant site promoting conservation awareness",
+      "Successfully transformed into prominent tourist attraction",
+      "Enhanced under Eco-Tourism Development Initiative",
+      "Collaborative project with Social Forestry Division"
+    ],
+    client: "Pilibhit Forest and Wildlife Division & Social Forestry Division",
+    status: "Completed",
+    detailedDescription: "Ghera Richhola represents the successful transformation of a natural wetland ecosystem into a sustainable eco-tourism destination. This ecologically significant site serves as a crucial habitat for migratory birds including peacocks, cranes, and herons. The comprehensive development features a stunning thematic entrance gate adorned with artistic sculptures of local wildlife species, complemented by a visually appealing traditional thatched roof nature hut designed for both aesthetic charm and visitor comfort. The project demonstrates exemplary collaboration between conservation objectives and tourism development, contributing to both biodiversity awareness and local economic growth."
   }
 ];
 
