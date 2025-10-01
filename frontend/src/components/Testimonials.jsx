@@ -9,6 +9,19 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
+      projectName: "Kumbh Mela Wildlife Exhibition",
+      location: "Allahabad (Prayagraj), Uttar Pradesh",
+      year: "2019",
+      projectImage: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/s5g3ogbv_PHOTO-2019-01-26-14-57-56.jpg",
+      testimonial: "The exhibition organized by the U.P. Forest Department on the occasion of Kumbh was very impressive. The displays related to forest and wildlife conservation were highly informative. Through educational boards, children and visitors gained useful knowledge about the importance of forests and wildlife. Such exhibitions are extremely beneficial in spreading awareness among students and society. I sincerely congratulate the organisers for this meaningful initiative and extend my best wishes for their future success.",
+      clientName: "Dara Singh Chauhan",
+      clientTitle: "Minister of Forest, Environment and Zoological Garden",
+      organization: "Government of Uttar Pradesh",
+      rating: 5,
+      category: "Wildlife Conservation Exhibition"
+    },
+    {
+      id: 2,
       projectName: "Major Dhyan Chand Nagar Van",
       location: "Jhansi, Uttar Pradesh",
       year: "2023-24",
@@ -21,7 +34,7 @@ const Testimonials = () => {
       category: "Urban Forest Development"
     },
     {
-      id: 2,
+      id: 3,
       projectName: "Lucknow Zoo Butterfly Park", 
       location: "Lucknow, Uttar Pradesh",
       year: "2016-18",
@@ -32,19 +45,6 @@ const Testimonials = () => {
       organization: "Lucknow Zoo Authority",
       rating: 5,
       category: "Urban Wildlife"
-    },
-    {
-      id: 3,
-      projectName: "Pilibhit Tiger Reserve Projects",
-      location: "Pilibhit, Uttar Pradesh", 
-      year: "2023-24",
-      projectImage: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/rtxqtt0u_IMG_7030.png",
-      testimonial: "The eco-tourism facilities created by Forest Vision Alliance have transformed our reserve. The selfie points and interpretation centers are attracting more visitors while maintaining our conservation goals. Excellent sustainable design approach.",
-      clientName: "Mr. Arun Singh",
-      clientTitle: "Range Officer",
-      organization: "Pilibhit Tiger Reserve",
-      rating: 5,
-      category: "Wildlife Conservation"
     }
     // You can add more testimonials here as you collect them
   ];
