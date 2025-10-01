@@ -10,18 +10,18 @@ const ArtisticCreations = () => {
     completed: [
       {
         id: 1,
-        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/rcj6a3xp_Screenshot%202025-10-01%20at%208.37.26%E2%80%AFPM.png",
-        title: "Majestic Tiger Sculpture",
-        description: "Life-sized tiger sculpture with intricate detail work",
+        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/x1z9hja3_lJzx3TpTSrat8xEySfZXcg.jpeg",
+        title: "Wildlife Sculpture Collection",
+        description: "Diverse collection of wildlife sculptures showcasing various species in authentic workshop setting",
         material: "Eco-friendly composite materials",
-        location: "Tiger Reserve Project"
+        location: "Forest Vision Alliance Workshop"
       },
       {
         id: 2, 
-        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/ijy2ifw6_Screenshot%202025-10-01%20at%208.37.19%E2%80%AFPM.png",
-        title: "Wildlife Collection",
-        description: "Diverse wildlife sculptures showcasing biodiversity",
-        material: "Sustainable materials",
+        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/gzk4a47a_gtL6CpmrTGiF9U_shG5w1g.png",
+        title: "Artistic Wildlife Display",
+        description: "Professional wildlife sculptures arranged in exhibition-style presentation",
+        material: "Sustainable materials & natural finishes",
         location: "Multiple Projects"
       },
       {
