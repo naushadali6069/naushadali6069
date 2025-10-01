@@ -6,6 +6,7 @@ import ProjectShowcase from "./components/ProjectShowcase";
 import About from "./components/About";
 import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
+import Testimonials from "./components/Testimonials";
 import Sustainability from "./components/Sustainability";
 import OurCompanies from "./components/OurCompanies";
 import Contact from "./components/Contact";
@@ -20,6 +21,7 @@ function App() {
       <About />
       <Services />
       <Portfolio />
+      <Testimonials />
       <Sustainability />
       <OurCompanies />
       <Contact />
