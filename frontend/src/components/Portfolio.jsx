@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MapPin, Calendar, CheckCircle, Eye, ExternalLink, FileText, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { MapPin, Calendar, CheckCircle, Eye, ExternalLink, FileText, ChevronLeft, ChevronRight, X, Camera } from 'lucide-react';
 import { portfolioProjects } from '../mock';
 
 const Portfolio = () => {
