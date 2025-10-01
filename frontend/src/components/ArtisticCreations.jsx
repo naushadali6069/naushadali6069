@@ -5,98 +5,98 @@ const ArtisticCreations = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('completed');
 
-  // Testimonials data - you can replace these with your actual reviews
+  // Authentic sculpture collections from Forest Vision Alliance workshop
   const sculptureData = {
     completed: [
       {
         id: 1,
-        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/j230gqtw_Screenshot%202025-10-01%20at%208.37.26%E2%80%AFPM.png",
-        title: "Majestic Tiger Collection",
-        description: "Lifelike tiger sculptures with intricate detail work showcasing realistic proportions and expressions",
-        material: "Eco-friendly composite materials with natural finishes",
-        location: "Various Zoo & Park Projects"
+        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/gcvrf119_image.png",
+        title: "Deer Collection Masterpieces",
+        description: "Exquisite collection of spotted deer sculptures featuring lifelike proportions, detailed antler work, and authentic spotted patterns crafted by master artisans",
+        material: "Eco-friendly composite materials with hand-painted natural patterns",
+        location: "Multiple Wildlife Park & Reserve Projects"
       },
       {
         id: 2, 
-        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/3gxix2vo_Screenshot%202025-10-01%20at%208.37.19%E2%80%AFPM.png",
-        title: "Big Cat Wildlife Display",
-        description: "Professional leopard and lion sculptures arranged in naturalistic poses",
-        material: "Weather-resistant composite with authentic color patterns",
-        location: "Wildlife Conservation Centers"
+        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/yie8zapg_image-3.png",
+        title: "Big Cats Collection",
+        description: "Stunning leopard, tiger, and lion sculptures showcasing incredible attention to detail, realistic poses, and authentic color patterns of India's magnificent big cats",
+        material: "Weather-resistant composite with hand-painted spots, stripes & natural coloring",
+        location: "Tiger Reserves & Wildlife Conservation Centers"
       },
       {
         id: 3,
-        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/vhqp4nzw_Screenshot%202025-10-01%20at%208.36.58%E2%80%AFPM.png",
-        title: "Graceful Wildlife Collection",
-        description: "Elegant lion sculpture and butterfly art showcasing diverse wildlife species",
-        material: "Natural stone carving with detailed craftsmanship",
-        location: "Heritage Gateway & Park Projects"
+        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/y377d3k5_image-2.png",
+        title: "Diverse Wildlife Collection", 
+        description: "Impressive range including vibrant butterfly sculptures, majestic elephant and rhino figures, and detailed crocodile sculptures representing India's rich biodiversity",
+        material: "Mixed sustainable materials with vibrant eco-friendly paints & finishes",
+        location: "Zoos, Botanical Gardens & Educational Centers"
       },
       {
         id: 4,
-        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/6j7nchrj_gtL6CpmrTGiF9U_shG5w1g.png",
-        title: "Artistic Wildlife Display",
-        description: "Professional exhibition of completed sculptures in workshop display setting",
-        material: "Mixed media with sustainable materials",
-        location: "Forest Vision Alliance Gallery"
+        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/5cbho7n8_image-6.png",
+        title: "Indian Water Birds Collection",
+        description: "Beautiful collection of native water birds including cranes, ducks, herons, and flamingos showcasing the elegant forms and graceful poses of India's aquatic wildlife",
+        material: "Durable materials with authentic feather textures & natural bird coloring",
+        location: "Wetland Parks, Lake Projects & Bird Sanctuaries"
       },
       {
         id: 5,
-        image: "https://via.placeholder.com/400x300/4a7c59/ffffff?text=Leopard+Sculpture",
-        title: "Spotted Leopard Masterpiece", 
-        description: "Detailed leopard sculpture capturing the grace and power of this magnificent wild cat",
-        material: "Composite materials with hand-painted spotted pattern",
-        location: "Wildlife Park Installation"
+        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/j230gqtw_Screenshot%202025-10-01%20at%208.37.26%E2%80%AFPM.png",
+        title: "Tiger Workshop Excellence",
+        description: "Close-up view of master craftsmen creating incredibly detailed tiger sculptures with meticulous attention to stripe patterns and realistic proportions",
+        material: "Premium composite materials with authentic tiger markings",
+        location: "Tiger Conservation Project Installations"
       },
       {
         id: 6,
-        image: "https://via.placeholder.com/400x300/4a7c59/ffffff?text=Deer+Family",
-        title: "Deer Family Collection",
-        description: "Beautiful deer sculptures including spotted deer and family groups in natural poses",
-        material: "Eco-friendly materials with realistic texture work",
-        location: "Multiple Park Projects"
+        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/3gxix2vo_Screenshot%202025-10-01%20at%208.37.19%E2%80%AFPM.png",
+        title: "Predator Collection",
+        description: "Professional leopard and big cat sculptures arranged to showcase the power and grace of India's apex predators with lifelike expressions",
+        material: "Advanced composite materials with realistic fur texturing",
+        location: "Wildlife Interpretation Centers"
       },
       {
         id: 7,
-        image: "https://via.placeholder.com/400x300/4a7c59/ffffff?text=Flamingo+Birds",
-        title: "Elegant Flamingo Display",
-        description: "Graceful flamingo sculptures capturing the beauty of these elegant birds",
-        material: "Weather-resistant materials with vibrant color finish",
-        location: "Zoo & Botanical Garden Projects"
+        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/vhqp4nzw_Screenshot%202025-10-01%20at%208.36.58%E2%80%AFPM.png",
+        title: "Majestic Lion & Wildlife Art",
+        description: "Powerful lion sculptures and butterfly installations demonstrating the artistic range from large mammals to delicate insects",
+        material: "Natural stone carving combined with colorful butterfly art",
+        location: "Heritage Gateways & Garden Projects"
       },
       {
         id: 8,
-        image: "https://via.placeholder.com/400x300/4a7c59/ffffff?text=Stone+Lion",
-        title: "Monumental Stone Lion",
-        description: "Powerful stone-carved lion sculpture showcasing traditional craftsmanship",
-        material: "Natural stone with detailed mane work",
-        location: "Heritage Gateway Installation"
+        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/6j7nchrj_gtL6CpmrTGiF9U_shG5w1g.png",
+        title: "Workshop Gallery Display",
+        description: "Professional exhibition showcasing the breadth of Forest Vision Alliance's sculptural capabilities in a sophisticated gallery setting",
+        material: "Mixed media sculptures with premium finishing",
+        location: "Forest Vision Alliance Design Studio"
       }
     ],
     inProgress: [
       {
         id: 9,
         image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/yp8molb3_lJzx3TpTSrat8xEySfZXcg.jpeg",
-        title: "Master Craftsman Tiger Work",
-        description: "Expert artisan meticulously working on intricate tiger sculpture details, showcasing traditional craftsmanship techniques",
-        stage: "Fine Detail Work Phase",
+        title: "Master Craftsman at Work",
+        description: "Expert artisan carefully working on intricate deer sculpture details, showcasing the traditional hand-crafting techniques that bring each piece to life",
+        stage: "Fine Detail & Texture Work",
         completion: "85%"
       },
       {
         id: 10,
-        image: "https://via.placeholder.com/400x300/4a7c59/ffffff?text=Deer+In+Progress",
-        title: "Deer Sculpture Development",
-        description: "Skilled sculptor carefully crafting deer sculpture with attention to anatomical accuracy",
-        stage: "Texture & Pattern Work",
-        completion: "70%"
+        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/gcvrf119_image.png",
+        title: "Deer Collection Workshop",
+        description: "Behind-the-scenes view of the workshop where multiple deer sculptures are being crafted simultaneously, showing the scale of production capability",
+        stage: "Multiple Species Development",
+        completion: "Various Stages"
       },
       {
         id: 11,
-        image: "https://via.placeholder.com/400x300/4a7c59/ffffff?text=Workshop+Scene",
-        title: "Multi-Species Workshop",
-        description: "Workshop scene showing multiple wildlife sculptures in various stages of completion",
-        stage: "Multiple Projects",
-        completion: "Various Stages"
+        image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/y377d3k5_image-2.png",
+        title: "Multi-Species Wildlife Workshop",
+        description: "Active workshop scene showing elephant, butterfly, and other wildlife sculptures in development, demonstrating the diversity of ongoing projects",
+        stage: "Simultaneous Multi-Project Development",
+        completion: "70-90%"
       }
     ]
   };
