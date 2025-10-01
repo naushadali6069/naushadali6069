@@ -307,6 +307,36 @@ export const portfolioProjects = [
     client: "Awadh Forest Division, Government of Uttar Pradesh",
     status: "Completed",
     detailedDescription: "The Lakshmanpuri Ecotourism Reserve represents Forest Vision Alliance's latest achievement in creating immersive wildlife education experiences. This state-of-the-art 'Eco Spot' installation features a spectacular wildlife diorama showcasing the region's biodiversity through meticulously crafted life-sized sculptures including a majestic tiger as the centerpiece, elegant deer with detailed antler work, graceful crane, and colorful kingfisher, all set within an authentic forest environment complete with natural trees, rock formations, and carefully designed landscaping. The project was officially inaugurated by the Honourable Principal Chief Conservator of Forests (Wildlife) in 2024, marking another milestone in Uttar Pradesh's expanding ecotourism infrastructure. The installation serves as both an educational tool for wildlife conservation awareness and a significant attraction for visitors to the Awadh Forest Division."
+  },
+  {
+    id: 10,
+    title: "Kukrail Forest Reserve - Selfie Point & Buddha Statue",
+    location: "Kukrail Forest Reserve, Lucknow, Uttar Pradesh",
+    year: "2025",
+    category: "Forest Recreation & Spiritual Tourism",
+    description: "Stunning bamboo selfie point installation with traditional Buddha statue, inaugurated during Van Mahotsav 2025 by UP's Minister of Environment Forest and Climate Change.",
+    image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/tiasinqy_6cb7b1ea-8599-4d2e-8fe4-5034dff88f71.JPG",
+    galleryImages: [
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/u2hl08uq_c9a207a1-9307-41fc-b1d1-e1ec0d0035f2.JPG",
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/ytbkw45k_IMG_7097.jpg",
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/o9blo4hc_IMG_7098.jpg",
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/0y9cj131_da723d08-c851-43b3-8be9-f29f202b8ad0.JPG",
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/gxda9o36_IMG_7100.jpg"
+    ],
+    highlights: [
+      "Elegant curved bamboo selfie point with 'कुकरैल' (Kukrail) signage in Devanagari script",
+      "Vibrant tropical landscaping with colorful flowering garlands and lush green plants",
+      "Masterfully crafted Buddha statue in traditional meditation pose (Dhyana Mudra)",
+      "Professional stone/concrete sculpture work with intricate facial features and robes",
+      "Official inauguration during Van Mahotsav 2025 (July 2, 2025)",
+      "Inaugurated by Shri Arun Kumar Saxena, Minister of State for Environment Forest",
+      "Part of week-long Tree Plantation Drive promoting environmental consciousness",
+      "Combines recreational photography spot with spiritual meditation space",
+      "Sustainable bamboo construction showcasing eco-friendly design principles"
+    ],
+    client: "Kukrail Forest Reserve, Lucknow & Government of Uttar Pradesh",
+    status: "Completed",
+    detailedDescription: "The Kukrail Forest Reserve project represents a beautiful fusion of recreational tourism and spiritual contemplation, featuring an elegantly designed curved bamboo selfie point adorned with vibrant tropical landscaping and the traditional 'कुकरैल' signage in Devanagari script. The centerpiece is a masterfully crafted Buddha statue in the classic meditation pose (Dhyana Mudra), demonstrating exceptional stone carving craftsmanship with intricate attention to facial features, robes, and traditional iconography. This meaningful project was officially inaugurated during Van Mahotsav on July 2, 2025, by Shri Arun Kumar Saxena, Uttar Pradesh's Minister of State for Environment Forest and Climate Change, as part of a week-long Tree Plantation Drive. The installation serves dual purposes: providing visitors with an Instagram-worthy selfie spot surrounded by lush tropical plants and colorful flowering garlands, while simultaneously offering a serene space for meditation and spiritual reflection, perfectly embodying the harmony between nature conservation, recreation, and spiritual wellness."
   }
 ];
 
