@@ -259,6 +259,34 @@ export const portfolioProjects = [
     client: "Pilibhit Forest and Wildlife Division & Social Forestry Division",
     status: "Completed",
     detailedDescription: "Ghera Richhola represents the successful transformation of a natural wetland ecosystem into a sustainable eco-tourism destination. This ecologically significant site serves as a crucial habitat for migratory birds including peacocks, cranes, and herons. The comprehensive development features a stunning thematic entrance gate adorned with artistic sculptures of local wildlife species, complemented by a visually appealing traditional thatched roof nature hut designed for both aesthetic charm and visitor comfort. The project demonstrates exemplary collaboration between conservation objectives and tourism development, contributing to both biodiversity awareness and local economic growth."
+  },
+  {
+    id: 8,
+    title: "Kumbh Mela Wildlife Exhibition",
+    location: "Prayagraj, Uttar Pradesh (Ganga Banks)",
+    year: "2018-19",
+    category: "Educational Wildlife Exhibition",
+    description: "Major wildlife conservation exhibition showcased during 2019 Kumbh Mela featuring comprehensive dioramas and educational displays about Ganga ecosystem biodiversity.",
+    image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/ixw40j37_image.jpeg",
+    galleryImages: [
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/4x2m8soc_image.png",
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/1851h75x_image.png",
+      "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/dm1nozii_image.jpeg"
+    ],
+    highlights: [
+      "Showcased during the 2019 Kumbh Mela along the sacred Ganga banks",
+      "Developed under the prestigious Namami Gange initiative",
+      "Life-size wildlife dioramas featuring lions, tigers, elephants, and leopards",
+      "Multi-level naturalistic displays with jungle settings and water features",
+      "Comprehensive educational panels about Uttar Pradesh wildlife corridors",
+      "Focus on endangered Ganga aquatic species: dolphins, turtles, and gharials",
+      "Interactive map displays showing state-wide biodiversity conservation areas",
+      "Illuminated corridor exhibitions with detailed species information",
+      "Ministerial endorsement from Dara Singh Chauhan, Forest Minister UP"
+    ],
+    client: "Forest Division Prayagraj & Namami Gange Initiative",
+    status: "Completed",
+    detailedDescription: "This landmark wildlife conservation exhibition was strategically positioned along the sacred Ganga banks during the 2019 Kumbh Mela, one of the world's largest religious gatherings. Developed under the prestigious Namami Gange initiative, the exhibition featured spectacular life-size wildlife dioramas showcasing the rich biodiversity of the Ganga ecosystem and Uttar Pradesh's wildlife corridors. The multi-level naturalistic displays included majestic lions, tigers, elephants, and leopards in carefully crafted jungle settings, complemented by comprehensive educational panels highlighting endangered aquatic species such as the Ganges Dolphin, various turtle species, and gharials. The exhibition successfully raised awareness among millions of visitors about wildlife conservation and the critical importance of protecting the Ganga's unique ecosystem, earning recognition from the highest levels of government including a personal endorsement from the State Forest Minister."
   }
 ];
 
