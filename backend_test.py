@@ -95,7 +95,7 @@ class ContactFormTester:
                         data['email'] == test_data['email'] and
                         data['message'] == test_data['message']):
                         self.log_result("POST /api/contact - Valid Data", True, 
-                                      f"Contact submission created with ID: {data['id']}")
+                                      f"Contact submission created with ID: {data['id']} - Email notification should be sent")
                         return data['id']
                     else:
                         self.log_result("POST /api/contact - Valid Data", False, 
