@@ -281,7 +281,7 @@ const Portfolio = () => {
             overflow: 'hidden',
             boxShadow: '0 8px 32px rgba(27, 67, 50, 0.2)'
           }}>
-            <img 
+            <OptimizedImage 
               src="https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/275ipr1m_White%20and%20Black%20Minimalist%20Graduation%20Video.png"
               alt="Forest Vision Alliance Portfolio Showcase - Butterfly sculptures, eco-tourism huts, interpretation centers, and wildlife installations"
               style={{
@@ -291,7 +291,6 @@ const Portfolio = () => {
                 objectFit: 'cover',
                 borderRadius: '24px'
               }}
-              loading="lazy"
             />
           </div>
           
