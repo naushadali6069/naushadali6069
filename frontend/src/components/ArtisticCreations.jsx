@@ -284,6 +284,41 @@ const ArtisticCreations = () => {
         </div>
       </div>
 
+      {/* Contact Modal */}
+      {showContactModal && (
+        <div className="contact-modal-overlay" onClick={() => setShowContactModal(false)}>
+          <div className="contact-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="contact-modal-header">
+              <h3>Let's Discuss Your Custom Sculpture Project</h3>
+              <button className="close-button" onClick={() => setShowContactModal(false)}>
+                <X size={20} />
+              </button>
+            </div>
+            <div className="contact-modal-content">
+              <p>Ready to bring your vision to life? Choose your preferred way to connect:</p>
+              <div className="contact-options">
+                <button className="contact-option whatsapp" onClick={handleWhatsAppContact}>
+                  <MessageCircle size={24} />
+                  <div>
+                    <span className="option-title">WhatsApp Chat</span>
+                    <span className="option-subtitle">Quick response via message</span>
+                  </div>
+                  <ArrowRight size={16} />
+                </button>
+                <button className="contact-option phone" onClick={handlePhoneContact}>
+                  <Phone size={24} />
+                  <div>
+                    <span className="option-title">Direct Call</span>
+                    <span className="option-subtitle">Immediate consultation</span>
+                  </div>
+                  <ArrowRight size={16} />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <style jsx>{`
         .sculptures-section {
           padding: var(--spacing-giant) 0;
