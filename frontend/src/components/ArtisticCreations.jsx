@@ -79,6 +79,21 @@ const ArtisticCreations = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Contact functions
+  const handleWhatsAppContact = () => {
+    const phoneNumber = "+917838754906";
+    const message = "Hi! I'm interested in discussing custom wildlife sculptures for my eco-tourism project. Could we please schedule a consultation?";
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+    setShowContactModal(false);
+  };
+
+  const handlePhoneContact = () => {
+    const phoneNumber = "+917838754906";
+    window.open(`tel:${phoneNumber}`, '_self');
+    setShowContactModal(false);
+  };
+
   return (
     <section id="artistic-creations" className="sculptures-section">
       <div className="sculptures-container">
