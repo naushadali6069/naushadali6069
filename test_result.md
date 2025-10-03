@@ -172,6 +172,18 @@
           agent: "main"  
           comment: "Updated contact form to submit to backend API with loading states and success/error messages"
 
+  - task: "Fix Portfolio section blank display on mobile devices"
+    implemented: true
+    working: false  
+    file: "/app/frontend/src/components/Portfolio.jsx"
+    stuck_count: 1
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: false
+          agent: "testing"  
+          comment: "CRITICAL ISSUE IDENTIFIED: Portfolio section shows blank on mobile due to IntersectionObserver not triggering React state update. All 10 portfolio cards are rendered but have opacity:0 because 'visible' CSS class is never added. Root cause: IntersectionObserver callback not setting isVisible state to true on mobile. When manually adding 'visible' class, all cards become immediately visible. This is a JavaScript/React state management issue, not CSS or image loading. Gallery modal works perfectly. Issue affects mobile viewports (375x667, 390x844) but desktop works fine."
+
 ## metadata:
   created_by: "main_agent"
   version: "1.0"
