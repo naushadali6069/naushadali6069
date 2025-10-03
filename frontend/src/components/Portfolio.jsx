@@ -8,6 +8,16 @@ const Portfolio = () => {
   const [imagesLoaded, setImagesLoaded] = useState(new Set());
   const [loadingError, setLoadingError] = useState(new Set());
 
+  // Helper function to handle image loading
+  const handleImageLoad = (projectId) => {
+    setImagesLoaded(prev => new Set([...prev, projectId]));
+  };
+
+  const handleImageError = (projectId) => {
+    setLoadingError(prev => new Set([...prev, projectId]));
+    console.warn(`Failed to load image for project ${projectId}`);
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
