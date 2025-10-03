@@ -269,24 +269,35 @@ const Portfolio = () => {
               style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
               <div className="project-image">
+                {/* Loading placeholder */}
+                {!imagesLoaded.has(project.id) && !loadingError.has(project.id) && (
+                  <div className="image-loading-placeholder">
+                    <div className="loading-spinner"></div>
+                    <span>Loading...</span>
+                  </div>
+                )}
+                
                 <img 
                   src={project.image} 
                   alt={`${project.title} - Forest Vision Alliance Project`}
                   loading="lazy"
-                  onError={(e) => {
-                    console.warn(`Failed to load image for ${project.title}:`, project.image);
-                    e.target.style.backgroundColor = '#f0f0f0';
-                    e.target.alt = `${project.title} - Image loading...`;
-                  }}
-                  onLoad={(e) => {
-                    e.target.style.opacity = '1';
-                  }}
+                  onError={() => handleImageError(project.id)}
+                  onLoad={() => handleImageLoad(project.id)}
                   style={{
-                    opacity: '0',
-                    transition: 'opacity 0.3s ease',
-                    backgroundColor: '#f8f9fa'
+                    opacity: imagesLoaded.has(project.id) ? '1' : '0',
+                    transition: 'opacity 0.5s ease',
+                    display: loadingError.has(project.id) ? 'none' : 'block'
                   }}
                 />
+                
+                {/* Error state */}
+                {loadingError.has(project.id) && (
+                  <div className="image-error-placeholder">
+                    <div className="error-icon">📷</div>
+                    <span>{project.title}</span>
+                    <small>Image temporarily unavailable</small>
+                  </div>
+                )}
                 <div className="image-overlay">
                   <button 
                     className="view-project-btn"
