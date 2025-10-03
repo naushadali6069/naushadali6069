@@ -9,6 +9,19 @@ const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [imagesLoaded, setImagesLoaded] = useState(new Set());
   const [loadingError, setLoadingError] = useState(new Set());
+  const { isSlowConnection } = useConnectionSpeed();
+
+  // Optimize project data based on connection speed
+  const optimizedProjects = useMemo(() => {
+    if (isSlowConnection) {
+      // For slow connections, load fewer images initially
+      return portfolioProjects.map(project => ({
+        ...project,
+        gallery: project.gallery ? project.gallery.slice(0, 3) : [] // Load only first 3 images
+      }));
+    }
+    return portfolioProjects;
+  }, [isSlowConnection]);
 
   // Helper function to handle image loading
   const handleImageLoad = (projectId) => {
