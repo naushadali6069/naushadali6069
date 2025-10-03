@@ -276,7 +276,7 @@ const ArtisticCreations = () => {
           <div className="cta-content">
             <h4>Bring Art to Your Eco-Tourism Project</h4>
             <p>Commission custom wildlife sculptures that inspire conservation and enhance visitor experience</p>
-            <button className="cta-button">
+            <button className="cta-button" onClick={() => setShowContactModal(true)}>
               <span>Discuss Custom Sculptures</span>
               <ArrowRight size={20} />
             </button>
