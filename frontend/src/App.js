@@ -1,117 +1,126 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, startTransition } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import LazySection from "./components/LazySection";
-import { usePerformanceMetrics } from "./hooks/usePerformance";
+import { usePerformanceMetrics, useConnectionSpeed } from "./hooks/usePerformance";
 
-// Lazy load components that are below the fold
-const ProjectShowcase = lazy(() => import("./components/ProjectShowcase"));
-const About = lazy(() => import("./components/About"));
-const Services = lazy(() => import("./components/Services"));
-const ArtisticCreations = lazy(() => import("./components/ArtisticCreations"));
-const Portfolio = lazy(() => import("./components/Portfolio"));
-const Testimonials = lazy(() => import("./components/Testimonials"));
-const Sustainability = lazy(() => import("./components/Sustainability"));
-const OurCompanies = lazy(() => import("./components/OurCompanies"));
-const Contact = lazy(() => import("./components/Contact"));
-const Footer = lazy(() => import("./components/Footer"));
+// Import components directly - React 19 Suspense issues with complex lazy loading
+import ProjectShowcase from "./components/ProjectShowcase";
+import About from "./components/About";
+import Services from "./components/Services";
+import ArtisticCreations from "./components/ArtisticCreations";
+import Portfolio from "./components/Portfolio";
+import Testimonials from "./components/Testimonials";
+import Sustainability from "./components/Sustainability";
+import OurCompanies from "./components/OurCompanies";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
-// Loading fallback component
-const SectionLoader = ({ height = "400px" }) => (
-  <div 
-    className="flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100"
-    style={{ minHeight: height }}
-  >
-    <div className="text-center">
-      <div className="animate-spin rounded-full h-12 w-12 border-4 border-green-200 border-t-green-600 mx-auto mb-4"></div>
-      <p className="text-gray-600">Loading...</p>
-    </div>
-  </div>
-);
+// Simple visibility-based performance optimization
+const PerformanceOptimizedSection = ({ children, className = "" }) => {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const [hasLoaded, setHasLoaded] = React.useState(false);
+  const ref = React.useRef();
 
-function App() {
-  const metrics = usePerformanceMetrics();
-
-  // Preload critical components after initial load
   React.useEffect(() => {
-    if (metrics.firstContentfulPaint > 0) {
-      // Preload components that are likely to be viewed soon
-      const timer = setTimeout(() => {
-        import("./components/About");
-        import("./components/Services");
-      }, 2000);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasLoaded) {
+          startTransition(() => {
+            setIsVisible(true);
+            setHasLoaded(true);
+          });
+        }
+      },
+      { 
+        threshold: 0.1, 
+        rootMargin: '100px' // Load before coming into view
+      }
+    );
 
-      return () => clearTimeout(timer);
+    if (ref.current) {
+      observer.observe(ref.current);
     }
-  }, [metrics.firstContentfulPaint]);
+
+    return () => observer.disconnect();
+  }, [hasLoaded]);
 
   return (
-    <div className="App">
+    <div 
+      ref={ref} 
+      className={`transition-opacity duration-500 ${className} ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+      style={{ minHeight: isVisible ? 'auto' : '300px' }}
+    >
+      {isVisible ? children : (
+        <div className="flex items-center justify-center" style={{ minHeight: '300px' }}>
+          <div className="text-center">
+            <div className="animate-pulse">
+              <div className="w-16 h-16 bg-gray-200 rounded-lg mx-auto mb-4"></div>
+              <div className="w-32 h-4 bg-gray-200 rounded mx-auto"></div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+function App() {
+  const { isSlowConnection } = useConnectionSpeed();
+  
+  // Reduce animations on slow connections
+  React.useEffect(() => {
+    if (isSlowConnection) {
+      document.body.classList.add('reduce-motion');
+    }
+  }, [isSlowConnection]);
+
+  return (
+    <div className="App smooth-scroll">
       {/* Critical above-the-fold content loads immediately */}
       <Header />
       <Hero />
       
-      {/* Below-the-fold content loads lazily */}
-      <LazySection fallback={<SectionLoader height="300px" />}>
-        <Suspense fallback={<SectionLoader height="300px" />}>
-          <ProjectShowcase />
-        </Suspense>
-      </LazySection>
+      {/* Performance optimized sections with intersection observer */}
+      <PerformanceOptimizedSection>
+        <ProjectShowcase />
+      </PerformanceOptimizedSection>
 
-      <LazySection fallback={<SectionLoader height="400px" />}>
-        <Suspense fallback={<SectionLoader height="400px" />}>
-          <About />
-        </Suspense>
-      </LazySection>
+      <PerformanceOptimizedSection>
+        <About />
+      </PerformanceOptimizedSection>
 
-      <LazySection fallback={<SectionLoader height="500px" />}>
-        <Suspense fallback={<SectionLoader height="500px" />}>
-          <Services />
-        </Suspense>
-      </LazySection>
+      <PerformanceOptimizedSection>
+        <Services />
+      </PerformanceOptimizedSection>
 
-      <LazySection fallback={<SectionLoader height="600px" />}>
-        <Suspense fallback={<SectionLoader height="600px" />}>
-          <ArtisticCreations />
-        </Suspense>
-      </LazySection>
+      <PerformanceOptimizedSection>
+        <ArtisticCreations />
+      </PerformanceOptimizedSection>
 
-      <LazySection fallback={<SectionLoader height="700px" />}>
-        <Suspense fallback={<SectionLoader height="700px" />}>
-          <Portfolio />
-        </Suspense>
-      </LazySection>
+      <PerformanceOptimizedSection>
+        <Portfolio />
+      </PerformanceOptimizedSection>
 
-      <LazySection fallback={<SectionLoader height="400px" />}>
-        <Suspense fallback={<SectionLoader height="400px" />}>
-          <Testimonials />
-        </Suspense>
-      </LazySection>
+      <PerformanceOptimizedSection>
+        <Testimonials />
+      </PerformanceOptimizedSection>
 
-      <LazySection fallback={<SectionLoader height="500px" />}>
-        <Suspense fallback={<SectionLoader height="500px" />}>
-          <Sustainability />
-        </Suspense>
-      </LazySection>
+      <PerformanceOptimizedSection>
+        <Sustainability />
+      </PerformanceOptimizedSection>
 
-      <LazySection fallback={<SectionLoader height="400px" />}>
-        <Suspense fallback={<SectionLoader height="400px" />}>
-          <OurCompanies />
-        </Suspense>
-      </LazySection>
+      <PerformanceOptimizedSection>
+        <OurCompanies />
+      </PerformanceOptimizedSection>
 
-      <LazySection fallback={<SectionLoader height="500px" />}>
-        <Suspense fallback={<SectionLoader height="500px" />}>
-          <Contact />
-        </Suspense>
-      </LazySection>
+      <PerformanceOptimizedSection>
+        <Contact />
+      </PerformanceOptimizedSection>
 
-      <LazySection fallback={<SectionLoader height="200px" />}>
-        <Suspense fallback={<SectionLoader height="200px" />}>
-          <Footer />
-        </Suspense>
-      </LazySection>
+      <PerformanceOptimizedSection>
+        <Footer />
+      </PerformanceOptimizedSection>
     </div>
   );
 }
