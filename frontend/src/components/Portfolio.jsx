@@ -117,15 +117,14 @@ const Portfolio = () => {
           <div className="modal-gallery">
             <div className="gallery-main">
               <div className="gallery-image-container">
-                <img 
-                  key={currentImageIndex} // Force re-render for transition
+                <OptimizedImage 
+                  key={currentImageIndex}
                   src={allImages[currentImageIndex]?.url} 
                   alt={allImages[currentImageIndex]?.caption}
                   className="gallery-main-image"
-                  loading="lazy"
-                  onError={(e) => {
+                  priority={true}
+                  onError={() => {
                     console.warn('Gallery image failed to load:', allImages[currentImageIndex]?.url);
-                    e.target.style.backgroundColor = '#f0f0f0';
                   }}
                   style={{ 
                     animation: 'imageSlideIn 0.4s ease-out',
