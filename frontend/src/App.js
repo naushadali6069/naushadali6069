@@ -16,25 +16,21 @@ import OurCompanies from "./components/OurCompanies";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-// Simple visibility-based performance optimization
+// Simple performance-enhanced section wrapper - always shows content
 const PerformanceOptimizedSection = ({ children, className = "" }) => {
-  const [isVisible, setIsVisible] = React.useState(false);
-  const [hasLoaded, setHasLoaded] = React.useState(false);
+  const [hasAnimated, setHasAnimated] = React.useState(false);
   const ref = React.useRef();
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasLoaded) {
-          startTransition(() => {
-            setIsVisible(true);
-            setHasLoaded(true);
-          });
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
         }
       },
       { 
         threshold: 0.1, 
-        rootMargin: '100px' // Load before coming into view
+        rootMargin: '50px'
       }
     );
 
@@ -42,25 +38,25 @@ const PerformanceOptimizedSection = ({ children, className = "" }) => {
       observer.observe(ref.current);
     }
 
-    return () => observer.disconnect();
-  }, [hasLoaded]);
+    // Fallback to ensure content is always visible
+    const fallbackTimer = setTimeout(() => {
+      setHasAnimated(true);
+    }, 1000);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallbackTimer);
+    };
+  }, [hasAnimated]);
 
   return (
     <div 
       ref={ref} 
-      className={`transition-opacity duration-500 ${className} ${isVisible ? 'opacity-100' : 'opacity-0'}`}
-      style={{ minHeight: isVisible ? 'auto' : '300px' }}
+      className={`transition-all duration-700 ease-out ${className} ${
+        hasAnimated ? 'opacity-100 translate-y-0' : 'opacity-90 translate-y-4'
+      }`}
     >
-      {isVisible ? children : (
-        <div className="flex items-center justify-center" style={{ minHeight: '300px' }}>
-          <div className="text-center">
-            <div className="animate-pulse">
-              <div className="w-16 h-16 bg-gray-200 rounded-lg mx-auto mb-4"></div>
-              <div className="w-32 h-4 bg-gray-200 rounded mx-auto"></div>
-            </div>
-          </div>
-        </div>
-      )}
+      {children}
     </div>
   );
 };
