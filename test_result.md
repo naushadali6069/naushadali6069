@@ -241,11 +241,9 @@
 ## test_plan:
   current_focus:
     - "Fix Portfolio section blank display on mobile devices"
-    - "Update contact form to integrate with backend API"
-    - "Discuss Custom Sculptures button functionality in Artistic Creations section"
   stuck_tasks: 
     - "Fix Portfolio section blank display on mobile devices"
-  test_all: true
+  test_all: false
   test_priority: "high_first"
 
 ## agent_communication:
