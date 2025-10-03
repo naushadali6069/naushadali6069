@@ -180,7 +180,7 @@
 
 ## test_plan:
   current_focus:
-    - "Create contact form backend integration with FastAPI and MongoDB"
+    - "Gmail SMTP email notification system for contact form"
     - "Update contact form to integrate with backend API"
   stuck_tasks: []
   test_all: true
