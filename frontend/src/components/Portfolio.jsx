@@ -91,9 +91,15 @@ const Portfolio = () => {
                   src={allImages[currentImageIndex]?.url} 
                   alt={allImages[currentImageIndex]?.caption}
                   className="gallery-main-image"
+                  loading="lazy"
+                  onError={(e) => {
+                    console.warn('Gallery image failed to load:', allImages[currentImageIndex]?.url);
+                    e.target.style.backgroundColor = '#f0f0f0';
+                  }}
                   style={{ 
                     animation: 'imageSlideIn 0.4s ease-out',
-                    filter: 'brightness(1.02) contrast(1.05)'
+                    filter: 'brightness(1.02) contrast(1.05)',
+                    backgroundColor: '#f8f9fa'
                   }}
                 />
                 
