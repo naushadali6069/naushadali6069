@@ -217,10 +217,9 @@ const ArtisticCreations = () => {
                     style={{ animationDelay: `${index * 200}ms` }}
                   >
                     <div className="progress-image">
-                      <img 
+                      <OptimizedImage 
                         src={sculpture.image} 
                         alt={sculpture.title}
-                        loading="lazy"
                       />
                       <div className="progress-overlay">
                         <div className="progress-badge">
