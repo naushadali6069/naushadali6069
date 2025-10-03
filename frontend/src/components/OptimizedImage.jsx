@@ -19,17 +19,30 @@ const OptimizedImage = ({
   const [imageSrc, setImageSrc] = useState(priority ? src : null);
 
   const { ref, inView } = useInView({
-    threshold: 0.1,
+    threshold: 0.01, // Much lower threshold for better triggering
     triggerOnce: true,
+    rootMargin: '200px', // Load images 200px before coming into view
     skip: priority
   });
 
-  // Load image when in view
+  // Load image when in view with fallback timer
   React.useEffect(() => {
     if ((inView || priority) && !imageSrc && !hasError) {
       setImageSrc(src);
     }
   }, [inView, priority, src, imageSrc, hasError]);
+
+  // Aggressive fallback timer to ensure images load
+  React.useEffect(() => {
+    if (!priority && !imageSrc && !hasError) {
+      const fallbackTimer = setTimeout(() => {
+        console.log('OptimizedImage fallback: Loading image due to intersection observer delay');
+        setImageSrc(src);
+      }, 2000); // Load after 2 seconds regardless
+
+      return () => clearTimeout(fallbackTimer);
+    }
+  }, [priority, imageSrc, hasError, src]);
 
   const handleLoad = useCallback((e) => {
     setIsLoaded(true);
