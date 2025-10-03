@@ -210,9 +210,9 @@
 
   - task: "Fix Portfolio section blank display on mobile devices"
     implemented: true
-    working: true  
+    working: false  
     file: "/app/frontend/src/components/Portfolio.jsx"
-    stuck_count: 2
+    stuck_count: 3
     priority: "high"
     needs_retesting: false
     status_history:
@@ -225,6 +225,9 @@
         - working: true
           agent: "testing"
           comment: "PERFORMANCE OPTIMIZATION VERIFICATION COMPLETE: Portfolio section now working perfectly on mobile! ✅ Found 10 portfolio cards displaying correctly on mobile (375x667) ✅ Mobile grid layout optimized (343px width) ✅ Proper opacity (1.0) and visibility confirmed ✅ Portfolio fallback mechanism working (console shows 'Portfolio fallback: Setting visible due to IntersectionObserver delay') ✅ Mobile-specific styling applied correctly ✅ All portfolio images loading with optimization. The React 19 Suspense lazy loading issues have been resolved with the new PerformanceOptimizedSection implementation. Mobile performance now excellent with 100% mobile compatibility score."
+        - working: false
+          agent: "testing"
+          comment: "CRITICAL OPTIMIZEDIMAGE LAZY LOADING BUG DISCOVERED: Portfolio section is visible but 7/10 images fail to load due to OptimizedImage component IntersectionObserver malfunction. Cards 1-3 load immediately (in viewport), but cards 4-10 remain stuck in loading state with spinning placeholders. All image URLs are valid and accessible (tested directly). When forced scrolling triggers IntersectionObserver manually, ALL 10 images load successfully, proving the issue is with the lazy loading mechanism in OptimizedImage.jsx. The IntersectionObserver in OptimizedImage component fails to trigger for below-the-fold content, preventing imageSrc state from being set. This is a critical UX issue - users see loading spinners instead of portfolio images."
 
   - task: "Discuss Custom Sculptures button functionality in Artistic Creations section"
     implemented: true
