@@ -180,7 +180,7 @@ const Portfolio = () => {
                       }}
                       type="button"
                     >
-                      <img src={img.url} alt={img.caption} />
+                      <OptimizedImage src={img.url} alt={img.caption} />
                     </button>
                   ))}
                 </div>
