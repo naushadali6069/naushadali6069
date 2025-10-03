@@ -190,6 +190,18 @@
           agent: "main"  
           comment: "Updated contact form to submit to backend API with loading states and success/error messages"
 
+  - task: "Add Project Proposal and DPR services to contact form"
+    implemented: true
+    working: "NA"  
+    file: "/app/frontend/src/components/Contact.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "main"  
+          comment: "Added 'Project Proposal Service' and 'DPR Service with DSR Rates' options to the Project Type dropdown in contact form. These new services are now available for selection when users submit inquiries."
+
   - task: "Fix Portfolio section blank display on mobile devices"
     implemented: true
     working: false  
