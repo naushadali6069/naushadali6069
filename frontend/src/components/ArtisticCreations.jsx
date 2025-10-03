@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Palette, Hammer, Leaf, Users, ArrowRight, Play } from 'lucide-react';
+import { Palette, Hammer, Leaf, Users, ArrowRight, Play, MessageCircle, Phone, X } from 'lucide-react';
 
 const ArtisticCreations = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('completed');
+  const [showContactModal, setShowContactModal] = useState(false);
 
   // Authentic sculpture collections - 4 main categories only
   const sculptureData = {
