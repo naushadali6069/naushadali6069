@@ -102,12 +102,12 @@ const Portfolio = () => {
           <div className="modal-gallery">
             <div className="gallery-main">
               <div className="gallery-image-container">
-                <OptimizedImage 
+                <img 
                   key={currentImageIndex}
                   src={allImages[currentImageIndex]?.url} 
                   alt={allImages[currentImageIndex]?.caption}
                   className="gallery-main-image"
-                  priority={true}
+                  loading="eager"
                   onError={() => {
                     console.warn('Gallery image failed to load:', allImages[currentImageIndex]?.url);
                   }}
