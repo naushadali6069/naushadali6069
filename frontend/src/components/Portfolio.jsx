@@ -259,8 +259,21 @@ const Portfolio = () => {
               <div className="project-image">
                 <img 
                   src={project.image} 
-                  alt={`${project.title} - Placeholder for authentic project photos`}
+                  alt={`${project.title} - Forest Vision Alliance Project`}
                   loading="lazy"
+                  onError={(e) => {
+                    console.warn(`Failed to load image for ${project.title}:`, project.image);
+                    e.target.style.backgroundColor = '#f0f0f0';
+                    e.target.alt = `${project.title} - Image loading...`;
+                  }}
+                  onLoad={(e) => {
+                    e.target.style.opacity = '1';
+                  }}
+                  style={{
+                    opacity: '0',
+                    transition: 'opacity 0.3s ease',
+                    backgroundColor: '#f8f9fa'
+                  }}
                 />
                 <div className="image-overlay">
                   <button 
