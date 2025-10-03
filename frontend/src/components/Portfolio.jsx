@@ -1069,10 +1069,34 @@ const Portfolio = () => {
           font-weight: 600;
         }
         
-        @media (max-width: 781px) {
+        /* Mobile-specific optimizations */
+        @media (max-width: 768px) {
           .portfolio-grid {
             grid-template-columns: 1fr;
             gap: var(--spacing-medium);
+          }
+
+          .project-image {
+            height: 220px; /* Reduced height for mobile */
+          }
+
+          .project-image img {
+            object-fit: cover;
+            /* Reduce image quality slightly on mobile for faster loading */
+            image-rendering: optimizeSpeed;
+          }
+
+          .image-loading-placeholder {
+            font-size: 12px;
+          }
+
+          .loading-spinner {
+            width: 20px;
+            height: 20px;
+          }
+
+          .portfolio-card {
+            margin-bottom: var(--spacing-medium);
           }
           
           .project-header {
@@ -1107,6 +1131,47 @@ const Portfolio = () => {
           .thumbnail {
             width: 60px;
             height: 45px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .project-image {
+            height: 200px; /* Further reduced for small screens */
+          }
+
+          .portfolio-card {
+            border-radius: 16px;
+          }
+
+          .image-loading-placeholder {
+            font-size: 11px;
+            padding: var(--spacing-small);
+          }
+
+          .loading-spinner {
+            width: 18px;
+            height: 18px;
+          }
+        }
+
+        /* Performance optimizations */
+        .portfolio-card {
+          will-change: transform;
+          backface-visibility: hidden;
+        }
+
+        .project-image img {
+          will-change: opacity;
+        }
+
+        /* Reduce animations on mobile for better performance */
+        @media (max-width: 768px) {
+          .portfolio-card:hover {
+            transform: translateY(-4px);
+          }
+          
+          .portfolio-card:hover .project-image img {
+            transform: scale(1.02);
           }
         }
       `}</style>
