@@ -732,6 +732,166 @@ const ArtisticCreations = () => {
             height: 300px;
           }
         }
+
+        /* Contact Modal Styles */
+        .contact-modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 10000;
+          animation: fadeIn 0.3s ease;
+        }
+
+        .contact-modal {
+          background: white;
+          border-radius: 20px;
+          max-width: 500px;
+          width: 90%;
+          max-height: 80vh;
+          overflow-y: auto;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+          animation: slideUp 0.3s ease;
+        }
+
+        .contact-modal-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: var(--spacing-large);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-modal-header h3 {
+          margin: 0;
+          color: var(--brand-primary);
+          font-size: 1.3rem;
+          font-weight: 600;
+        }
+
+        .close-button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 8px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background-color 0.2s ease;
+        }
+
+        .close-button:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-modal-content {
+          padding: var(--spacing-large);
+        }
+
+        .contact-modal-content p {
+          margin-bottom: var(--spacing-large);
+          color: var(--text-secondary);
+          text-align: center;
+        }
+
+        .contact-options {
+          display: flex;
+          flex-direction: column;
+          gap: var(--spacing-medium);
+        }
+
+        .contact-option {
+          display: flex;
+          align-items: center;
+          gap: var(--spacing-medium);
+          padding: var(--spacing-large);
+          border: 2px solid rgba(70, 130, 60, 0.2);
+          border-radius: 12px;
+          background: rgba(70, 130, 60, 0.05);
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-align: left;
+        }
+
+        .contact-option:hover {
+          border-color: var(--brand-primary);
+          background: rgba(70, 130, 60, 0.1);
+          transform: translateY(-2px);
+        }
+
+        .contact-option.whatsapp {
+          border-color: rgba(37, 211, 102, 0.3);
+          background: rgba(37, 211, 102, 0.05);
+        }
+
+        .contact-option.whatsapp:hover {
+          border-color: #25d366;
+          background: rgba(37, 211, 102, 0.1);
+        }
+
+        .contact-option.phone {
+          border-color: rgba(59, 130, 246, 0.3);
+          background: rgba(59, 130, 246, 0.05);
+        }
+
+        .contact-option.phone:hover {
+          border-color: #3b82f6;
+          background: rgba(59, 130, 246, 0.1);
+        }
+
+        .contact-option div {
+          flex: 1;
+        }
+
+        .option-title {
+          display: block;
+          font-weight: 600;
+          color: var(--text-primary);
+          margin-bottom: 4px;
+        }
+
+        .option-subtitle {
+          display: block;
+          font-size: 0.9rem;
+          color: var(--text-secondary);
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+          from { 
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to { 
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @media (max-width: 768px) {
+          .contact-modal {
+            width: 95%;
+            margin: 20px;
+          }
+
+          .contact-modal-header h3 {
+            font-size: 1.1rem;
+          }
+
+          .contact-option {
+            padding: var(--spacing-medium);
+          }
+        }
       `}</style>
     </section>
   );
