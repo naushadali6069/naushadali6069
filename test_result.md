@@ -136,6 +136,18 @@
           comment: "EMAIL NOTIFICATION TESTING COMPLETE: Gmail SMTP integration working perfectly. All email configuration loaded correctly (GMAIL_USER, GMAIL_APP_PASSWORD, NOTIFICATION_EMAIL). Email notifications sent successfully for all test submissions to forestvisionalliance@gmail.com. Professional email formatting confirmed with all contact details (name, email, organization, project, message, timestamp). Backend logs show successful SMTP connections and email delivery. Graceful fallback working - contact submissions save to database even if email fails. 12/12 core tests passed. Minor: Email format validation not implemented (accepts invalid emails but still sends notifications)."
 
 ## frontend:
+  - task: "Remove 'Made with Emergent' badge from website"
+    implemented: false
+    working: "NA"  
+    file: "/app/frontend/public/index.html"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "main"  
+          comment: "Located 'Made with Emergent' badge in index.html (lines 36-82). Ready to remove this hardcoded badge element."
+
   - task: "Integrate 5 new Lucknow Zoo Butterfly Park images into portfolio gallery"
     implemented: true
     working: true  
