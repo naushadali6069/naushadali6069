@@ -165,7 +165,7 @@ const Portfolio = () => {
                       }}
                       type="button"
                     >
-                      <OptimizedImage src={img.url} alt={img.caption} />
+                      <img src={img.url} alt={img.caption} loading="lazy" />
                     </button>
                   ))}
                 </div>
