@@ -43,7 +43,7 @@ async def send_email_notification(contact_data):
         message = MIMEMultipart()
         message["From"] = gmail_user
         message["To"] = notification_email
-        message["Subject"] = f"New Contact Form Submission - Forest Vision Alliance"
+        message["Subject"] = "New Contact Form Submission - Forest Vision Alliance"
         
         # Email body with professional formatting
         body = f"""
