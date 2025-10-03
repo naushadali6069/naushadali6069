@@ -213,6 +213,8 @@ const Contact = () => {
                   <option value="gates-sculptures">Gates & Sculptures</option>
                   <option value="landscaping">Landscaping & Parks</option>
                   <option value="murals">Murals & Artistic Installations</option>
+                  <option value="project-proposal">Project Proposal Service</option>
+                  <option value="dpr-dsr">DPR Service with DSR Rates</option>
                   <option value="other">Other</option>
                 </select>
               </div>
