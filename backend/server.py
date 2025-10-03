@@ -162,6 +162,13 @@ async def submit_contact_form(input: ContactSubmissionCreate):
         # Insert into database
         await db.contact_submissions.insert_one(contact_data)
         
+        # Send email notification
+        email_sent = await send_email_notification(contact_obj)
+        if email_sent:
+            logger.info(f"Email notification sent for contact from {contact_obj.name} <{contact_obj.email}>")
+        else:
+            logger.warning(f"Failed to send email notification for contact from {contact_obj.name} <{contact_obj.email}>")
+        
         logger.info(f"New contact submission from {contact_obj.name} <{contact_obj.email}>")
         return contact_obj
     except Exception as e:
