@@ -192,9 +192,10 @@
 
 ## test_plan:
   current_focus:
-    - "Gmail SMTP email notification system for contact form"
+    - "Fix Portfolio section blank display on mobile devices"
     - "Update contact form to integrate with backend API"
-  stuck_tasks: []
+  stuck_tasks: 
+    - "Fix Portfolio section blank display on mobile devices"
   test_all: true
   test_priority: "high_first"
 
