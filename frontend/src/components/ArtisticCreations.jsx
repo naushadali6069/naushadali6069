@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Palette, Hammer, Leaf, Users, ArrowRight, Play, MessageCircle, Phone, X } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
+import { useConnectionSpeed } from '../hooks/usePerformance';
 
 const ArtisticCreations = () => {
   const [isVisible, setIsVisible] = useState(false);
