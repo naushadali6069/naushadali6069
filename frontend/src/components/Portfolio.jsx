@@ -283,7 +283,7 @@ const Portfolio = () => {
         </div>
         
         <div className="portfolio-grid">
-          {optimizedProjects.map((project, index) => (
+          {portfolioProjects.map((project, index) => (
             <div 
               key={project.id} 
               className={`portfolio-card fade-in ${isVisible ? 'visible' : ''}`}
