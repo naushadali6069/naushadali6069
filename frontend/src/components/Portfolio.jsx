@@ -298,9 +298,10 @@ const Portfolio = () => {
                   </div>
                 )}
                 
-                <OptimizedImage 
+                <img 
                   src={project.image} 
                   alt={`${project.title} - Forest Vision Alliance Project`}
+                  loading="lazy"
                   onError={() => handleImageError(project.id)}
                   onLoad={() => handleImageLoad(project.id)}
                   style={{
