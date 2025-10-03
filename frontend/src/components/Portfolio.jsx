@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import { MapPin, Calendar, CheckCircle, Eye, ExternalLink, FileText, ChevronLeft, ChevronRight, X, Camera } from 'lucide-react';
 import { portfolioProjects } from '../mock';
+import OptimizedImage from './OptimizedImage';
+import { useConnectionSpeed } from '../hooks/usePerformance';
 
 const Portfolio = () => {
   const [isVisible, setIsVisible] = useState(false);
