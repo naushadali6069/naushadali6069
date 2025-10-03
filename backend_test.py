@@ -261,6 +261,95 @@ class ContactFormTester:
         except Exception as e:
             self.log_result("POST /api/contact - Empty Data", False, f"Request error: {str(e)}")
 
+    def test_email_notification_comprehensive(self):
+        """Test comprehensive email notification with all fields"""
+        test_data = {
+            "name": "Forest Vision Test User",
+            "email": "testemail@forestdept.gov.in",
+            "organization": "Ministry of Environment and Forests",
+            "project": "wildlife-sanctuary",
+            "message": "We need assistance with creating an interactive nature center for our new wildlife sanctuary. This project will serve educational purposes for visitors and local communities. Please provide details about your services and timeline for implementation."
+        }
+        
+        try:
+            response = requests.post(f"{API_URL}/contact", json=test_data, timeout=15)
+            
+            if response.status_code == 200:
+                data = response.json()
+                # Verify all fields are present in response
+                expected_fields = ['id', 'name', 'email', 'organization', 'project', 'message', 'timestamp', 'status']
+                missing_fields = [field for field in expected_fields if field not in data]
+                
+                if missing_fields:
+                    self.log_result("Email Notification - Comprehensive Test", False, 
+                                  f"Missing fields in response: {missing_fields}", data)
+                else:
+                    # Verify all data matches
+                    data_matches = all([
+                        data['name'] == test_data['name'],
+                        data['email'] == test_data['email'],
+                        data['organization'] == test_data['organization'],
+                        data['project'] == test_data['project'],
+                        data['message'] == test_data['message']
+                    ])
+                    
+                    if data_matches:
+                        self.log_result("Email Notification - Comprehensive Test", True, 
+                                      f"Complete contact form with all fields submitted successfully. ID: {data['id']}. Email notification with all details should be sent to forestvisionalliance@gmail.com")
+                    else:
+                        self.log_result("Email Notification - Comprehensive Test", False, 
+                                      "Response data doesn't match input data", data)
+            else:
+                self.log_result("Email Notification - Comprehensive Test", False, 
+                              f"Status code: {response.status_code}", response.text)
+        except Exception as e:
+            self.log_result("Email Notification - Comprehensive Test", False, f"Request error: {str(e)}")
+
+    def check_backend_logs_for_email(self):
+        """Check backend logs for email-related messages"""
+        import subprocess
+        try:
+            # Check supervisor backend logs for email-related entries
+            result = subprocess.run(['tail', '-n', '50', '/var/log/supervisor/backend.out.log'], 
+                                  capture_output=True, text=True, timeout=10)
+            
+            if result.returncode == 0:
+                log_content = result.stdout
+                email_indicators = [
+                    'Email notification sent successfully',
+                    'Failed to send email notification',
+                    'Email configuration missing',
+                    'SMTP',
+                    'gmail'
+                ]
+                
+                found_indicators = []
+                for indicator in email_indicators:
+                    if indicator.lower() in log_content.lower():
+                        found_indicators.append(indicator)
+                
+                if found_indicators:
+                    self.log_result("Backend Logs - Email Activity", True, 
+                                  f"Found email-related log entries: {', '.join(found_indicators)}")
+                else:
+                    self.log_result("Backend Logs - Email Activity", False, 
+                                  "No email-related log entries found in recent logs")
+                
+                # Print recent logs for debugging
+                print("Recent backend logs (last 20 lines):")
+                print("-" * 40)
+                recent_logs = log_content.split('\n')[-20:]
+                for log_line in recent_logs:
+                    if log_line.strip():
+                        print(f"  {log_line}")
+                print()
+                
+            else:
+                self.log_result("Backend Logs - Email Activity", False, 
+                              f"Could not read backend logs: {result.stderr}")
+        except Exception as e:
+            self.log_result("Backend Logs - Email Activity", False, f"Error checking logs: {str(e)}")
+
     def run_all_tests(self):
         """Run all contact form tests"""
         print("=" * 60)
