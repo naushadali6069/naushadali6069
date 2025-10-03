@@ -68,13 +68,13 @@ class ContactFormTester:
             return False
 
     def test_post_contact_valid_data(self):
-        """Test POST /api/contact with valid data"""
+        """Test POST /api/contact with valid data - includes email notification testing"""
         test_data = {
-            "name": "John Doe",
-            "email": "john.doe@forestdepartment.gov",
-            "organization": "Forest Department, Uttar Pradesh",
+            "name": "Test Client",
+            "email": "testclient@example.com",
+            "organization": "Forest Department Test",
             "project": "nature-center",
-            "message": "We are interested in developing a Nature Interpretation Centre for our reserve. Please contact us to discuss project details and timeline."
+            "message": "This is a test message to verify the email notification system is working properly for Forest Vision Alliance contact form."
         }
         
         try:
