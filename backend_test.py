@@ -370,6 +370,12 @@ class ContactFormTester:
         self.test_post_contact_minimal_data()
         self.test_get_contact_submissions()
         
+        print("Testing Email Notification System...")
+        print("-" * 40)
+        
+        self.test_email_notification_comprehensive()
+        self.check_backend_logs_for_email()
+        
         print("Testing Validation and Error Handling...")
         print("-" * 40)
         
