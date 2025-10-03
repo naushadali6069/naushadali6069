@@ -433,7 +433,71 @@ const Portfolio = () => {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: transform 0.4s ease, opacity 0.5s ease;
+          background-color: #f8f9fa;
+        }
+
+        .image-loading-placeholder {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+          color: var(--text-light);
+          font-size: 14px;
+          z-index: 1;
+        }
+
+        .loading-spinner {
+          width: 24px;
+          height: 24px;
+          border: 2px solid #e9ecef;
+          border-top: 2px solid var(--brand-primary);
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+          margin-bottom: var(--spacing-small);
+        }
+
+        .image-error-placeholder {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+          color: var(--text-secondary);
+          text-align: center;
+          padding: var(--spacing-medium);
+        }
+
+        .error-icon {
+          font-size: 2rem;
+          margin-bottom: var(--spacing-small);
+          opacity: 0.5;
+        }
+
+        .image-error-placeholder span {
+          font-weight: 600;
+          margin-bottom: var(--spacing-xs);
+        }
+
+        .image-error-placeholder small {
+          color: var(--text-light);
+          font-size: 12px;
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
         }
         
         .portfolio-card:hover .project-image img {
