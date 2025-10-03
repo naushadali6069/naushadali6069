@@ -244,6 +244,7 @@
 ## test_plan:
   current_focus:
     - "Fix Portfolio section blank display on mobile devices"
+    - "Fix React lazy loading system failure"
   stuck_tasks: 
     - "Fix Portfolio section blank display on mobile devices"
   test_all: false
