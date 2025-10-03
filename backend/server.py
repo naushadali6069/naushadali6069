@@ -24,6 +24,74 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Email sending function
+async def send_email_notification(contact_data):
+    """Send email notification when contact form is submitted"""
+    try:
+        # Get email configuration from environment
+        smtp_server = os.environ.get('GMAIL_SMTP_SERVER', 'smtp.gmail.com')
+        smtp_port = int(os.environ.get('GMAIL_SMTP_PORT', 587))
+        gmail_user = os.environ.get('GMAIL_USER')
+        gmail_password = os.environ.get('GMAIL_APP_PASSWORD')
+        notification_email = os.environ.get('NOTIFICATION_EMAIL')
+        
+        if not all([gmail_user, gmail_password, notification_email]):
+            logger.error("Email configuration missing in environment variables")
+            return False
+        
+        # Create email message
+        message = MIMEMultipart()
+        message["From"] = gmail_user
+        message["To"] = notification_email
+        message["Subject"] = f"New Contact Form Submission - Forest Vision Alliance"
+        
+        # Email body with professional formatting
+        body = f"""
+New contact form submission received on Forest Vision Alliance website:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 CONTACT DETAILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👤 Name: {contact_data.name}
+📧 Email: {contact_data.email}
+🏢 Organization: {contact_data.organization or 'Not specified'}
+🎯 Project Type: {contact_data.project or 'Not specified'}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💬 MESSAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+{contact_data.message}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⏰ SUBMISSION DETAILS  
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🕐 Submitted: {contact_data.timestamp.strftime('%B %d, %Y at %I:%M %p')}
+🆔 Submission ID: {contact_data.id}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+This is an automated notification from your Forest Vision Alliance website.
+Please respond to the client directly at: {contact_data.email}
+        """
+        
+        message.attach(MIMEText(body, "plain"))
+        
+        # Send email
+        with smtplib.SMTP(smtp_server, smtp_port) as server:
+            server.starttls()  # Enable encryption
+            server.login(gmail_user, gmail_password)
+            server.send_message(message)
+        
+        logger.info(f"Email notification sent successfully for contact from {contact_data.email}")
+        return True
+        
+    except Exception as e:
+        logger.error(f"Failed to send email notification: {str(e)}")
+        return False
+
 # MongoDB connection
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
