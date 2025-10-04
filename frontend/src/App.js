@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import ProjectShowcase from "./components/ProjectShowcase";
 import About from "./components/About";
 import Services from "./components/Services";
 import ArtisticCreations from "./components/ArtisticCreations";
@@ -18,7 +17,6 @@ function App() {
     <div className="App smooth-scroll">
       <Header />
       <Hero />
-      <ProjectShowcase />
       <About />
       <Services />
       <ArtisticCreations />
