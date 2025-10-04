@@ -123,7 +123,13 @@ const Testimonials = () => {
               <img 
                 src={currentReview.projectImage} 
                 alt={`${currentReview.projectName} - Client testimonial`}
-                loading="lazy"
+                width="600"
+                height="400"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }}
               />
               <div className="project-overlay">
                 <div className="project-badge">
