@@ -180,7 +180,13 @@ const ArtisticCreations = () => {
                     <img 
                       src={sculpture.image} 
                       alt={sculpture.title}
-                      loading="lazy"
+                      width="400"
+                      height="300"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }}
                     />
                     <div className="sculpture-overlay">
                       <div className="sculpture-badge">
