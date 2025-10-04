@@ -139,7 +139,17 @@ const Portfolio = () => {
                       }}
                       type="button"
                     >
-                      <img src={img.url} alt={img.caption} loading="lazy" />
+                      <img 
+                        src={img.url} 
+                        alt={img.caption} 
+                        width="80"
+                        height="60"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover'
+                        }}
+                      />
                     </button>
                   ))}
                 </div>
