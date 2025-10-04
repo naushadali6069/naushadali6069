@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ArrowRight, Trees, Award, Users } from 'lucide-react';
 
 const Hero = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [counters, setCounters] = useState({
     projects: 0,
     divisions: 0,
