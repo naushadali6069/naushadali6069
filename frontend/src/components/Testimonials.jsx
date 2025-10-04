@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Star, Quote, MapPin, Calendar, Award, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Testimonials = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   // Testimonials data - you can replace these with your actual reviews
