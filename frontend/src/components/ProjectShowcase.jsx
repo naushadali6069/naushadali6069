@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, Play, MapPin, Calendar } from 'lucide-react'
 const ProjectShowcase = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoplay, setIsAutoplay] = useState(true);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   // Featured project slides with stunning images
   const featuredSlides = [
