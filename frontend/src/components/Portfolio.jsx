@@ -253,7 +253,8 @@ const Portfolio = () => {
             <img 
               src="https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/275ipr1m_White%20and%20Black%20Minimalist%20Graduation%20Video.png"
               alt="Forest Vision Alliance Portfolio Showcase - Butterfly sculptures, eco-tourism huts, interpretation centers, and wildlife installations"
-              loading="lazy"
+              width="1200"
+              height="500"
               style={{
                 width: '100%',
                 height: 'auto',
