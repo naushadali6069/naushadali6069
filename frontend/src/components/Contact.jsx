@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, ArrowRight, CheckCircle, AlertCircle } from 'lucid
 import { contactInfo } from '../mock';
 
 const Contact = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
