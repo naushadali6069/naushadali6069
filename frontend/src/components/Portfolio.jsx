@@ -372,7 +372,7 @@ const Portfolio = () => {
           ))}
         </div>
         
-        <div className={`portfolio-cta fade-in ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '800ms' }}>
+        <div className="portfolio-cta fade-in visible" style={{ transitionDelay: '800ms' }}>
           <h3 className="heading-2" style={{ marginBottom: 'var(--spacing-medium)', textAlign: 'center' }}>
             Ready to Create Your Legacy Project?
           </h3>
