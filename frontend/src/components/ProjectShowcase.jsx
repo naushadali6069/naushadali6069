@@ -30,12 +30,12 @@ const ProjectShowcase = () => {
     },
     {
       id: 3,
-      title: "Interpretation Centre Construction",
-      location: "Uttar Pradesh",
+      title: "Ranipur Tiger Reserve Gate",
+      location: "Chitrakoot, Uttar Pradesh",
       year: "2024",
-      image: "https://customer-assets.emergentagent.com/job_e5a4bf30-a5d5-4d7b-879a-b1add99dbc27/artifacts/360j9ao0_Interpretation-Centre-img1.jpg",
-      description: "Active construction of modern interpretation centre with sustainable building practices and visitor-friendly design elements.",
-      category: "Construction & Development",
+      image: "https://customer-assets.emergentagent.com/job_e5a4bf30-a5d5-4d7b-879a-b1add99dbc27/artifacts/napfdkuu_Ranipur%20Gate.png",
+      description: "Magnificent entrance gate for Ranipur Tiger Reserve featuring traditional stone craftsmanship and impressive architectural design for wildlife conservation.",
+      category: "Tiger Conservation",
       videoPlaceholder: true
     },
     {
