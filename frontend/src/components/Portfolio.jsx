@@ -3,7 +3,6 @@ import { MapPin, Calendar, CheckCircle, Eye, ExternalLink, FileText, ChevronLeft
 import { portfolioProjects } from '../mock';
 
 const Portfolio = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [imagesLoaded, setImagesLoaded] = useState(new Set());
   const [loadingError, setLoadingError] = useState(new Set());
