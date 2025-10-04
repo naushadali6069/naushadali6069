@@ -76,11 +76,16 @@ const Portfolio = () => {
                   src={allImages[currentImageIndex]?.url} 
                   alt={allImages[currentImageIndex]?.caption}
                   className="gallery-main-image"
-                  loading="eager"
+                  width="800"
+                  height="600"
                   onError={() => {
                     console.warn('Gallery image failed to load:', allImages[currentImageIndex]?.url);
                   }}
                   style={{ 
+                    width: '100%',
+                    height: 'auto',
+                    maxHeight: '70vh',
+                    objectFit: 'contain',
                     animation: 'imageSlideIn 0.4s ease-out',
                     filter: 'brightness(1.02) contrast(1.05)',
                     backgroundColor: '#f8f9fa'
