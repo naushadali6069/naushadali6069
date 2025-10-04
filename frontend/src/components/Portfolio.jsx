@@ -797,7 +797,7 @@ const Portfolio = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          z-index: 1000;
+          z-index: 100000;
           padding: var(--spacing-medium);
           backdrop-filter: blur(8px);
           animation: modalFadeIn 0.3s ease-out;
