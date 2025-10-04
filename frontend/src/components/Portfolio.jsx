@@ -17,37 +17,7 @@ const Portfolio = () => {
     console.warn(`Failed to load image for project ${projectId}`);
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { 
-        threshold: 0.01,  // Reduced threshold for mobile devices
-        rootMargin: '50px' // Trigger earlier on mobile
-      }
-    );
-
-    const section = document.getElementById('portfolio');
-    if (section) {
-      observer.observe(section);
-    }
-
-    // Fallback mechanism for mobile devices
-    const fallbackTimer = setTimeout(() => {
-      if (!isVisible) {
-        console.log('Portfolio fallback: Setting visible due to IntersectionObserver delay');
-        setIsVisible(true);
-      }
-    }, 2000);
-
-    return () => {
-      observer.disconnect();
-      clearTimeout(fallbackTimer);
-    };
-  }, [isVisible]);
+  // Removed intersection observer - portfolio is now always visible
 
   const ProjectModal = ({ project, onClose }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
