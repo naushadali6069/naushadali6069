@@ -10,7 +10,7 @@ const iconMap = {
 };
 
 const Sustainability = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
