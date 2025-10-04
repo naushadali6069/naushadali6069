@@ -270,10 +270,14 @@ const Portfolio = () => {
                 <img 
                   src={project.image} 
                   alt={`${project.title} - Forest Vision Alliance Project`}
-                  loading="lazy"
+                  width="400"
+                  height="300"
                   onError={() => handleImageError(project.id)}
                   onLoad={() => handleImageLoad(project.id)}
                   style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
                     opacity: imagesLoaded.has(project.id) ? '1' : '0',
                     transition: 'opacity 0.5s ease',
                     display: loadingError.has(project.id) ? 'none' : 'block'
