@@ -6,56 +6,56 @@ const ProjectShowcase = () => {
   const [isAutoplay, setIsAutoplay] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
 
-  // Featured project slides with stunning images
+  // Featured project slides with authentic project images
   const featuredSlides = [
     {
       id: 1,
-      title: "Major Dhyan Chand Nagar Van",
-      location: "Jhansi, Uttar Pradesh", 
-      year: "2023-24",
-      image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/rm903abq_IMG_5564.jpg",
-      description: "A harmonious blend of Jhansi's heritage and wildlife, featuring iconic gates with architectural grandeur.",
-      category: "Urban Forest Development",
+      title: "Traditional Eco-Tourism Hut",
+      location: "Uttar Pradesh", 
+      year: "2024",
+      image: "https://customer-assets.emergentagent.com/job_e5a4bf30-a5d5-4d7b-879a-b1add99dbc27/artifacts/ypkk939w_0A8A1936.png",
+      description: "Sustainable eco-tourism hut with traditional thatched roof design, blending local architecture with modern eco-friendly practices.",
+      category: "Sustainable Tourism",
       videoPlaceholder: true
     },
     {
       id: 2,
-      title: "Pilibhit Tiger Reserve Projects",
-      location: "Pilibhit, Uttar Pradesh",
-      year: "2023-24", 
-      image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/rtxqtt0u_IMG_7030.png",
-      description: "Multiple eco-tourism projects including famous selfie points and Nature Interpretation Centers.",
-      category: "Wildlife Conservation",
+      title: "Lucknow Zoo Nature Interpretation Centre",
+      location: "Lucknow, Uttar Pradesh",
+      year: "2024", 
+      image: "https://customer-assets.emergentagent.com/job_e5a4bf30-a5d5-4d7b-879a-b1add99dbc27/artifacts/644anqx1_6DC45E9E-E2C1-4E3E-87CF-4A76518CAB98.JPEG",
+      description: "Professional entrance signage for Lucknow Zoo's Nature Interpretation Centre, showcasing our expertise in educational infrastructure.",
+      category: "Educational Infrastructure",
       videoPlaceholder: true
     },
     {
       id: 3,
-      title: "Lucknow Zoo Butterfly Park",
-      location: "Lucknow, Uttar Pradesh",
-      year: "2016-18",
-      image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/9mnbtpes_IMG_0670.png",
-      description: "Uttar Pradesh's first Butterfly Park with artistic installations and comprehensive interpretation center.",
-      category: "Urban Wildlife",
+      title: "Interpretation Centre Construction",
+      location: "Uttar Pradesh",
+      year: "2024",
+      image: "https://customer-assets.emergentagent.com/job_e5a4bf30-a5d5-4d7b-879a-b1add99dbc27/artifacts/360j9ao0_Interpretation-Centre-img1.jpg",
+      description: "Active construction of modern interpretation centre with sustainable building practices and visitor-friendly design elements.",
+      category: "Construction & Development",
       videoPlaceholder: true
     },
     {
       id: 4,
-      title: "Rapdi Eco-Tourism Centre",
-      location: "Firozabad, Uttar Pradesh",
-      year: "2023-24",
-      image: "https://customer-assets.emergentagent.com/job_nature-projects/artifacts/uav55gh4_DJI_0233.JPG",
-      description: "Sustainable retreat center along scenic riverbank with eco-friendly huts and nature-centric design.",
-      category: "Riverside Eco-Tourism",
+      title: "Project Infrastructure Development",
+      location: "Uttar Pradesh",
+      year: "2024",
+      image: "https://customer-assets.emergentagent.com/job_e5a4bf30-a5d5-4d7b-879a-b1add99dbc27/artifacts/1ft6is69_IMG_0274.png",
+      description: "Professional project development showcasing our commitment to quality infrastructure and environmental integration.",
+      category: "Infrastructure Development",
       videoPlaceholder: true
     },
     {
       id: 5,
-      title: "Ranipur Tiger Reserve Gate",
-      location: "Chitrakoot, Uttar Pradesh",
-      year: "2023-24",
-      image: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/j37sig7w_Ranipur%20Gate.png",
-      description: "Grand stone entrance gate with traditional craftsmanship and tiger sculptures.",
-      category: "Tiger Conservation",
+      title: "Completed Project Installation",
+      location: "Uttar Pradesh",
+      year: "2024",
+      image: "https://customer-assets.emergentagent.com/job_e5a4bf30-a5d5-4d7b-879a-b1add99dbc27/artifacts/949oy4h5_IMG_2502.jpg",
+      description: "Finished installation demonstrating Forest Vision Alliance's expertise in delivering high-quality eco-tourism and conservation projects.",
+      category: "Project Completion",
       videoPlaceholder: true
     }
   ];
