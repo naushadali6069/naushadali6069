@@ -12,7 +12,7 @@ const iconMap = {
 };
 
 const Services = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [hoveredService, setHoveredService] = useState(null);
 
   useEffect(() => {
