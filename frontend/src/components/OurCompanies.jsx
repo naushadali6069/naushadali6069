@@ -3,7 +3,7 @@ import { Building2, Users, Wrench, Palette } from 'lucide-react';
 import { companies } from '../mock';
 
 const OurCompanies = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
