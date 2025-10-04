@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Palette, Hammer, Leaf, Users, ArrowRight, Play, MessageCircle, Phone, X } from 'lucide-react';
 
 const ArtisticCreations = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [activeTab, setActiveTab] = useState('completed');
   const [showContactModal, setShowContactModal] = useState(false);
 
