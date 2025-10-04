@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Target, Users, Leaf, Heart } from 'lucide-react';
 
 const About = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
