@@ -255,7 +255,7 @@ const Portfolio = () => {
           {portfolioProjects.map((project, index) => (
             <div 
               key={project.id} 
-              className={`portfolio-card fade-in ${isVisible ? 'visible' : ''}`}
+              className="portfolio-card fade-in visible"
               style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
               <div className="project-image">
