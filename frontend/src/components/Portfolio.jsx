@@ -218,7 +218,7 @@ const Portfolio = () => {
   return (
     <section id="portfolio" className="section-padding" style={{ background: 'var(--bg-subtle)' }}>
       <div className="container">
-        <div className={`portfolio-header fade-in ${isVisible ? 'visible' : ''}`}>
+        <div className="portfolio-header fade-in visible">
           <h2 className="heading-1" style={{ marginBottom: 'var(--spacing-medium)', textAlign: 'center' }}>
             Our <span style={{ color: 'var(--brand-accent)' }}>Portfolio</span>
           </h2>
