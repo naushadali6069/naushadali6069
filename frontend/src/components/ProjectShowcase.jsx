@@ -132,7 +132,13 @@ const ProjectShowcase = () => {
                       <img 
                         src={slide.image} 
                         alt={slide.title}
-                        loading={index === 0 ? "eager" : "lazy"}
+                        width="1200"
+                        height="800"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover'
+                        }}
                       />
                       <div className="slide-overlay"></div>
                     </div>
