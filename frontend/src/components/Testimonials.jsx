@@ -27,8 +27,8 @@ const Testimonials = () => {
       year: "2023-24",
       projectImage: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/rm903abq_IMG_5564.jpg",
       testimonial: "The architectural design of the gateway is absolutely magnificent! Forest Vision Alliance has created something that perfectly blends Jhansi's heritage with modern eco-tourism needs. The stone work and overall execution exceeded our expectations.",
-      clientName: "Dr. Rajesh Kumar",
-      clientTitle: "District Forest Officer",
+      clientName: "Shri MP Gautam",
+      clientTitle: "Divisional Forest Officer",
       organization: "Jhansi Forest Department",
       rating: 5,
       category: "Urban Forest Development"
