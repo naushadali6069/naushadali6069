@@ -401,9 +401,9 @@ export const sustainabilityFeatures = [
 export const testimonials = [
   {
     id: 1,
-    name: "Dr. Rajesh Kumar",
-    position: "Principal Chief Conservator of Forests",
-    organization: "Forest Department, Uttar Pradesh",
+    name: "Shri MP Gautam",
+    position: "Divisional Forest Officer",
+    organization: "Jhansi Forest Department",
     quote: "Forest Vision Alliance has transformed our eco-tourism infrastructure with their innovative designs and sustainable approach. Their work at Pilibhit Tiger Reserve has become a model for other reserves.",
     project: "Pilibhit Tiger Reserve"
   },
