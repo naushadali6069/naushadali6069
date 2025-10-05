@@ -17,10 +17,10 @@ function App() {
     <div className="App smooth-scroll">
       <Header />
       <Hero />
+      <Portfolio />
       <About />
       <Services />
       <ArtisticCreations />
-      <Portfolio />
       <Testimonials />
       <Sustainability />
       <OurCompanies />
