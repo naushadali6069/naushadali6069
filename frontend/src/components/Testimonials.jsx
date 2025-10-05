@@ -40,9 +40,9 @@ const Testimonials = () => {
       year: "2016-18",
       projectImage: "https://customer-assets.emergentagent.com/job_forest-vision-3/artifacts/9mnbtpes_IMG_0670.png",
       testimonial: "This is Uttar Pradesh's first butterfly park and it's absolutely wonderful! The artistic installations and interpretation center have made it a favorite destination for families and nature lovers. Children are learning so much about butterflies and conservation.",
-      clientName: "Mrs. Priya Sharma",
-      clientTitle: "Education Coordinator",
-      organization: "Lucknow Zoo Authority",
+      clientName: "Shri Piyush Mohan Srivastava",
+      clientTitle: "Range Officer",
+      organization: "Lucknow Zoo",
       rating: 5,
       category: "Urban Wildlife"
     }
