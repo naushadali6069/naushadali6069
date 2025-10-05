@@ -1,4 +1,4 @@
-const CACHE_NAME = 'forest-vision-v1.0.0';
+const CACHE_NAME = 'forest-vision-v2.0.0';
 const urlsToCache = [
   '/',
   '/static/js/bundle.js',
